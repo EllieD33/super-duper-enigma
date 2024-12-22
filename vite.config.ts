@@ -7,7 +7,11 @@ import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { glob } from "glob";
 
 export default defineConfig({
-    plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
+    plugins: [
+        react(),
+        libInjectCss(),
+        dts({ include: ["lib"], exclude: ["lib/**/*.stories.tsx"] }),
+    ],
     build: {
         lib: {
             entry: resolve(__dirname, "lib/main.ts"),
