@@ -21,3 +21,21 @@ export const Default: Story = {
         altText: "white flowers wth dark green leaves behind them",
     } as GalleryItemProps,
 };
+
+export const Small: Story = {
+    args: {
+        imageId: 1,
+        imageUrl: "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
+        altText: "white flowers wth dark green leaves behind them",
+        size: "small"
+    } as GalleryItemProps,
+};
+
+export const Large: Story = {
+    args: {
+        imageId: 1,
+        imageUrl: "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
+        altText: "white flowers wth dark green leaves behind them",
+        size: "large"
+    } as GalleryItemProps,
+};
