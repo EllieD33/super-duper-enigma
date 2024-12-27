@@ -23,6 +23,11 @@ export default tseslint.config(
                 "warn",
                 { allowConstantExport: true },
             ],
+            "padding-line-between-statements": [
+                "error",
+                { blankLine: "always", prev: "var", next: "function" },
+                { blankLine: "always", prev: "block", next: "block" },
+            ],
         },
     }
 );
