@@ -11,6 +11,12 @@
     "sideEffects": [
         "**/*.css"
     ],
+    "lint-staged": {
+        "*.ts": "prettier --check",
+        "*.tsx": "prettier --check",
+        "*.js": "prettier --check",
+        "*.css": "prettier --check"
+    },
     "scripts": {
         "dev": "vite",
         "build": "tsc - p ./tsconfig-build.json && vite build",
@@ -21,7 +27,9 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "prepublishOnly": "npm run build",
-        "test-storybook": "test-storybook"
+        "test-storybook": "test-storybook",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
     },
     "peerDependencies": {
         "react": "^18.3.1",
@@ -55,6 +63,8 @@
         "glob": "^11.0.0",
         "globals": "^15.13.0",
         "husky": "^9.1.7",
+        "lint-staged": "^15.2.11",
+        "prettier": "^3.4.2",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "storybook": "^8.4.7",
