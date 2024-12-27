@@ -1,15 +1,3 @@
 .container {
     display: flex;
 }
-
-.small {
-    height: 100px;
-}
-
-.medium {
-    height: 200px;
-}
-
-.large {
-    height: 400px;
-}

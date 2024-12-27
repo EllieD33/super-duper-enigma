@@ -1,6 +1,20 @@
 .image {
     max-width: 100%;
-    height: auto;
     border-radius: 15px;
     object-fit: cover;
+}
+
+.small {
+    height: 100px;
+    width: 100px;
+}
+
+.medium {
+    height: 200px;
+    width: 200px;
+}
+
+.large {
+    height: 400px;
+    width: 400px;
 }
