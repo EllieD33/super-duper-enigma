@@ -14,42 +14,44 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const defaultProps = {
+    imageId: 1,
+    imageUrl:
+        "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
+    altText: "white flowers wth dark green leaves behind them",
+};
+
 export const Default: Story = {
     args: {
-        imageId: 1,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
-        altText: "white flowers wth dark green leaves behind them",
+        ...defaultProps,
     } as GalleryItemProps,
 };
 
 export const Small: Story = {
     args: {
-        imageId: 1,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
-        altText: "white flowers wth dark green leaves behind them",
+        ...defaultProps,
         size: "small",
     } as GalleryItemProps,
 };
 
 export const Medium: Story = {
     args: {
-        imageId: 1,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
-        altText: "white flowers wth dark green leaves behind them",
+        ...defaultProps,
         size: "medium",
     } as GalleryItemProps,
 };
 
 export const Large: Story = {
     args: {
-        imageId: 1,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg",
-        altText: "white flowers wth dark green leaves behind them",
+        ...defaultProps,
         size: "large",
+    } as GalleryItemProps,
+};
+
+export const WithTextOverlay: Story = {
+    args: {
+        ...defaultProps,
+        overlayText: "Hello",
     } as GalleryItemProps,
 };
 

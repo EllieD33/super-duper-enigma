@@ -67,4 +67,21 @@ describe("GalleryItem", () => {
 
         expect(image).toHaveAttribute("alt", defaultProps.altText);
     });
+
+    it("should render the overlay with text when overlayText is provided", () => {
+        const overlayText = "Overlay Text";
+
+        render(<GalleryItem {...defaultProps} overlayText={overlayText} />);
+
+        const overlayElement = screen.getByText(overlayText);
+        expect(overlayElement).toBeInTheDocument();
+        expect(overlayElement).toHaveClass("overlayContent");
+    });
+
+    it("should not render the overlay when overlayText is not provided", () => {
+        render(<GalleryItem {...defaultProps} />);
+
+        const overlayElement = screen.queryByText(/overlayContent/i);
+        expect(overlayElement).toBeNull();
+    });
 });

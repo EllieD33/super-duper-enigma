@@ -8,15 +8,20 @@ exports[`HorizontalGallery should render the default component 1`] = `
   >
     <div>
       <div
+        class="container"
         id="gallery-item-1"
       >
-        <img
-          alt="image1 alt text"
-          class="image medium"
-          data-testid="galleryItemImage"
-          loading="lazy"
-          src="https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg"
-        />
+        <div
+          class=""
+        >
+          <img
+            alt="image1 alt text"
+            class="image medium"
+            data-testid="galleryItemImage"
+            loading="lazy"
+            src="https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg"
+          />
+        </div>
         <div
           class="SkeletonItem medium"
           data-testid="skeleton"
@@ -25,15 +30,20 @@ exports[`HorizontalGallery should render the default component 1`] = `
     </div>
     <div>
       <div
+        class="container"
         id="gallery-item-2"
       >
-        <img
-          alt="image2 alt text"
-          class="image medium"
-          data-testid="galleryItemImage"
-          loading="lazy"
-          src="https://cdn.pixabay.com/photo/2023/04/21/11/51/flower-7941764_640.jpg"
-        />
+        <div
+          class=""
+        >
+          <img
+            alt="image2 alt text"
+            class="image medium"
+            data-testid="galleryItemImage"
+            loading="lazy"
+            src="https://cdn.pixabay.com/photo/2023/04/21/11/51/flower-7941764_640.jpg"
+          />
+        </div>
         <div
           class="SkeletonItem medium"
           data-testid="skeleton"
@@ -42,15 +52,20 @@ exports[`HorizontalGallery should render the default component 1`] = `
     </div>
     <div>
       <div
+        class="container"
         id="gallery-item-3"
       >
-        <img
-          alt="image3 alt text"
-          class="image medium"
-          data-testid="galleryItemImage"
-          loading="lazy"
-          src="https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8163000_640.jpg"
-        />
+        <div
+          class=""
+        >
+          <img
+            alt="image3 alt text"
+            class="image medium"
+            data-testid="galleryItemImage"
+            loading="lazy"
+            src="https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8163000_640.jpg"
+          />
+        </div>
         <div
           class="SkeletonItem medium"
           data-testid="skeleton"
