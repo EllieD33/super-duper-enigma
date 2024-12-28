@@ -8,8 +8,13 @@ exports[`GalleryItem should match snapshot for all variants 1`] = `
     <img
       alt="beautiful sunset"
       class="image small"
+      data-testid="galleryItemImage"
       loading="lazy"
       src="https://example.com/sunset.jpg"
+    />
+    <div
+      class="SkeletonItem small"
+      data-testid="skeleton"
     />
   </div>
 </div>
@@ -23,8 +28,13 @@ exports[`GalleryItem should match snapshot for all variants 2`] = `
     <img
       alt="beautiful sunset"
       class="image medium"
+      data-testid="galleryItemImage"
       loading="lazy"
       src="https://example.com/sunset.jpg"
+    />
+    <div
+      class="SkeletonItem medium"
+      data-testid="skeleton"
     />
   </div>
 </div>
@@ -38,8 +48,13 @@ exports[`GalleryItem should match snapshot for all variants 3`] = `
     <img
       alt="beautiful sunset"
       class="image large"
+      data-testid="galleryItemImage"
       loading="lazy"
       src="https://example.com/sunset.jpg"
+    />
+    <div
+      class="SkeletonItem large"
+      data-testid="skeleton"
     />
   </div>
 </div>
@@ -53,8 +68,13 @@ exports[`GalleryItem should render the component medium size by default 1`] = `
     <img
       alt="beautiful sunset"
       class="image medium"
+      data-testid="galleryItemImage"
       loading="lazy"
       src="https://example.com/sunset.jpg"
+    />
+    <div
+      class="SkeletonItem medium"
+      data-testid="skeleton"
     />
   </div>
 </div>

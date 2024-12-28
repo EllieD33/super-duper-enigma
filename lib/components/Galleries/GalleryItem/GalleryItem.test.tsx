@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import GalleryItem, { GalleryItemProps } from "./GalleryItem";
 
 const defaultProps: GalleryItemProps = {
@@ -9,11 +9,42 @@ const defaultProps: GalleryItemProps = {
 };
 
 describe("GalleryItem", () => {
+    it("should display a skeleton while the image is loading", () => {
+        render(<GalleryItem {...defaultProps} />);
+        expect(screen.getByTestId("skeleton")).toBeInTheDocument();
+    });
+
+    it("should remove the skeleton after the image loads", async () => {
+        const props = { ...defaultProps };
+        render(<GalleryItem {...props} />);
+
+        const image = screen.getByTestId("galleryItemImage");
+        fireEvent.load(image);
+
+        await waitFor(() => {
+            expect(screen.queryByTestId("skeleton")).not.toBeInTheDocument();
+        });
+    });
+
+    it("should render the fallbackImage if no imageURL is passed", async () => {
+        const faultyProps = {
+            ...defaultProps,
+            imageUrl: "",
+            altText: "placeholder image",
+        };
+        render(<GalleryItem {...faultyProps} />);
+        const image = screen.getByTestId("galleryItemImage");
+        fireEvent.error(image);
+
+        await waitFor(() => {
+            expect(image).toHaveAttribute("src", "https://placehold.co/600");
+            expect(image).toHaveAttribute("alt", "image not found");
+        });
+    });
+
     it("should render the component medium size by default", () => {
-        const { container, getByAltText } = render(
-            <GalleryItem {...defaultProps} />
-        );
-        const image = getByAltText(defaultProps.altText);
+        const { container } = render(<GalleryItem {...defaultProps} />);
+        const image = screen.getByTestId("galleryItemImage");
 
         expect(image).toBeInTheDocument();
         expect(image).toHaveClass("medium");
@@ -31,8 +62,8 @@ describe("GalleryItem", () => {
     });
 
     it("should have an alt attribute matching the altText prop", () => {
-        const { getByAltText } = render(<GalleryItem {...defaultProps} />);
-        const image = getByAltText(defaultProps.altText);
+        render(<GalleryItem {...defaultProps} />);
+        const image = screen.getByTestId("galleryItemImage");
 
         expect(image).toHaveAttribute("alt", defaultProps.altText);
     });
