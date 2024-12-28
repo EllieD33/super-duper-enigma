@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import HorizontalGallery, { HorizontalGalleryProps } from "./HorizontalGallery";
 import mockImages from "./testData/testData";
 import { GalleryItemProps } from "../GalleryItem/GalleryItem";
@@ -34,5 +34,11 @@ describe("HorizontalGallery", () => {
     it("should apply the correct container class", () => {
         const { container } = render(<HorizontalGallery {...defaultProps} />);
         expect(container.firstChild).toHaveClass("container");
+    });
+
+    it("should render nothing when images array is empty", () => {
+        render(<HorizontalGallery images={[]} />);
+        const container = screen.queryByTestId("container");
+        expect(container).not.toBeInTheDocument();
     });
 });
