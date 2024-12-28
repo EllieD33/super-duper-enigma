@@ -1,7 +1,21 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",            // or "ES6"
+    "module": "ESNext",            // Ensure you're using ESNext for module support
+    "moduleResolution": "node",    // Use Node-style module resolution
+    "esModuleInterop": true,       // Enable default imports from CommonJS modules
+    "skipLibCheck": true,          // Skip type-checking for libraries for faster compilation
+    "strict": true,                // Enable strict mode
+    "jsx": "react",                // If using React, ensure JSX is supported
+    "types": ["jest", "@testing-library/jest-dom"],  // Make sure Jest and Testing Library types are included
+    "lib": ["dom", "esnext"]       // Ensure DOM and ESNext are available for type checking
+  },
+  "include": [
+    "lib/**/*.ts",                 // Include all TypeScript files in your src folder
+    "lib/**/*.tsx",                // Include all TSX files if you're using React
+    "setupTests.ts",               // Make sure Jest setup files are included
+    "**/*.test.ts",                // Include test files
+    "**/*.test.tsx"                // Include test files
   ]
 }

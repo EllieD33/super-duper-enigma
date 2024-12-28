@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import styles from "./GalleryItem.module.css";
 import clsx from "clsx";
 
@@ -15,12 +15,12 @@ const GalleryItem = ({
     imageId,
     size = "medium",
 }: GalleryItemProps): ReactElement => {
-    const galleryStyles = clsx(styles.image, styles[size]);
+    const galleryItemStyles = clsx(styles.image, styles[size]);
 
     return (
         <div id={`gallery-item-${imageId}`}>
             <img
-                className={galleryStyles}
+                className={galleryItemStyles}
                 src={imageUrl}
                 alt={altText}
                 loading="lazy"

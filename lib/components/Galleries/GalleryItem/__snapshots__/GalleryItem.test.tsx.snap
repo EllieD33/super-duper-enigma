@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GalleryItem should match snapshot for all variants 1`] = `
+<div>
+  <div
+    id="gallery-item-1"
+  >
+    <img
+      alt="beautiful sunset"
+      class="image small"
+      loading="lazy"
+      src="https://example.com/sunset.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`GalleryItem should match snapshot for all variants 2`] = `
+<div>
+  <div
+    id="gallery-item-1"
+  >
+    <img
+      alt="beautiful sunset"
+      class="image medium"
+      loading="lazy"
+      src="https://example.com/sunset.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`GalleryItem should match snapshot for all variants 3`] = `
+<div>
+  <div
+    id="gallery-item-1"
+  >
+    <img
+      alt="beautiful sunset"
+      class="image large"
+      loading="lazy"
+      src="https://example.com/sunset.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`GalleryItem should render the component medium size by default 1`] = `
+<div>
+  <div
+    id="gallery-item-1"
+  >
+    <img
+      alt="beautiful sunset"
+      class="image medium"
+      loading="lazy"
+      src="https://example.com/sunset.jpg"
+    />
+  </div>
+</div>
+`;

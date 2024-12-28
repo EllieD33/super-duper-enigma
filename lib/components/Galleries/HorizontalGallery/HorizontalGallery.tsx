@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import GalleryItem, { GalleryItemProps } from "../GalleryItem/GalleryItem";
 import styles from "./HorizontalGallery.module.css";
 
