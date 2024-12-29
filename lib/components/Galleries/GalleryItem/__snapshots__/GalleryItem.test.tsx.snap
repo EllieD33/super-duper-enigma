@@ -4,7 +4,7 @@ exports[`GalleryItem should match snapshot for all variants 1`] = `
 <div>
   <div
     class="container"
-    id="gallery-item-1"
+    data-testid="gallery-item-1"
   >
     <div
       class=""
@@ -29,7 +29,7 @@ exports[`GalleryItem should match snapshot for all variants 2`] = `
 <div>
   <div
     class="container"
-    id="gallery-item-1"
+    data-testid="gallery-item-1"
   >
     <div
       class=""
@@ -54,7 +54,7 @@ exports[`GalleryItem should match snapshot for all variants 3`] = `
 <div>
   <div
     class="container"
-    id="gallery-item-1"
+    data-testid="gallery-item-1"
   >
     <div
       class=""
@@ -75,25 +75,25 @@ exports[`GalleryItem should match snapshot for all variants 3`] = `
 </div>
 `;
 
-exports[`GalleryItem should render the component medium size by default 1`] = `
+exports[`GalleryItem should render the default component 1`] = `
 <div>
   <div
     class="container"
-    id="gallery-item-1"
+    data-testid="gallery-item-1"
   >
     <div
       class=""
     >
       <img
         alt="beautiful sunset"
-        class="image medium"
+        class="image"
         data-testid="galleryItemImage"
         loading="lazy"
         src="https://example.com/sunset.jpg"
       />
     </div>
     <div
-      class="SkeletonItem medium"
+      class="SkeletonItem"
       data-testid="skeleton"
     />
   </div>

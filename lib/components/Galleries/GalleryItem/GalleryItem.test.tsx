@@ -42,12 +42,11 @@ describe("GalleryItem", () => {
         });
     });
 
-    it("should render the component medium size by default", () => {
+    it("should render the default component", () => {
         const { container } = render(<GalleryItem {...defaultProps} />);
         const image = screen.getByTestId("galleryItemImage");
 
         expect(image).toBeInTheDocument();
-        expect(image).toHaveClass("medium");
         expect(container).toMatchSnapshot();
     });
 

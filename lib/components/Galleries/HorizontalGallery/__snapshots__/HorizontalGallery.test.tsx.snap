@@ -9,21 +9,21 @@ exports[`HorizontalGallery should render the default component 1`] = `
     <div>
       <div
         class="container"
-        id="gallery-item-1"
+        data-testid="gallery-item-1"
       >
         <div
           class=""
         >
           <img
             alt="image1 alt text"
-            class="image medium"
+            class="image"
             data-testid="galleryItemImage"
             loading="lazy"
             src="https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg"
           />
         </div>
         <div
-          class="SkeletonItem medium"
+          class="SkeletonItem"
           data-testid="skeleton"
         />
       </div>
@@ -31,21 +31,21 @@ exports[`HorizontalGallery should render the default component 1`] = `
     <div>
       <div
         class="container"
-        id="gallery-item-2"
+        data-testid="gallery-item-2"
       >
         <div
           class=""
         >
           <img
             alt="image2 alt text"
-            class="image medium"
+            class="image"
             data-testid="galleryItemImage"
             loading="lazy"
             src="https://cdn.pixabay.com/photo/2023/04/21/11/51/flower-7941764_640.jpg"
           />
         </div>
         <div
-          class="SkeletonItem medium"
+          class="SkeletonItem"
           data-testid="skeleton"
         />
       </div>
@@ -53,21 +53,21 @@ exports[`HorizontalGallery should render the default component 1`] = `
     <div>
       <div
         class="container"
-        id="gallery-item-3"
+        data-testid="gallery-item-3"
       >
         <div
           class=""
         >
           <img
             alt="image3 alt text"
-            class="image medium"
+            class="image"
             data-testid="galleryItemImage"
             loading="lazy"
             src="https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8163000_640.jpg"
           />
         </div>
         <div
-          class="SkeletonItem medium"
+          class="SkeletonItem"
           data-testid="skeleton"
         />
       </div>

@@ -14,14 +14,14 @@ const GalleryItem = ({
     imageUrl,
     altText,
     imageId,
-    size = "medium",
+    size,
     overlayText,
 }: GalleryItemProps): ReactElement => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [hasError, setHasError] = useState<boolean>(false);
 
-    const galleryItemStyles = clsx(styles.image, styles[size]);
-    const skeletonItemStyles = clsx(styles.SkeletonItem, styles[size]);
+    const galleryItemStyles = clsx(styles.image, size && styles[size]);
+    const skeletonItemStyles = clsx(styles.SkeletonItem, size && styles[size]);
     const overlayContainerStyles = overlayText
         ? clsx(styles.overlayContainer)
         : "";
@@ -39,7 +39,10 @@ const GalleryItem = ({
     };
 
     return (
-        <div id={`gallery-item-${imageId}`} className={styles.container}>
+        <div
+            data-testid={`gallery-item-${imageId}`}
+            className={styles.container}
+        >
             <div className={overlayContainerStyles}>
                 <img
                     className={galleryItemStyles}
