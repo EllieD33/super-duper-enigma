@@ -18,7 +18,7 @@ const HorizontalGallery = ({
             {images &&
                 images.map((image) => (
                     <div key={image.imageId}>
-                        <GalleryItem {...image} />
+                        <GalleryItem {...image} size="medium" />
                     </div>
                 ))}
         </div>
