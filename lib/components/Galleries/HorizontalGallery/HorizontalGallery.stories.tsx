@@ -8,7 +8,7 @@ const meta = {
     title: "Library/Galleries/HorizontalGallery",
     component: HorizontalGallery,
     parameters: {
-        layout: "centered",
+        layout: "fullscreen",
     },
     tags: ["autodocs"],
     argTypes: {},

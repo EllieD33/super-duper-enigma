@@ -3,118 +3,138 @@
 exports[`HorizontalGallery should render the default component 1`] = `
 <div>
   <div
-    class="container"
-    data-testid="gallery-container"
+    class="scrollableContainer"
+    data-testid="scrollContainer"
   >
-    <div>
+    <div
+      class="contentContainer"
+      data-testid="contentContainer"
+    >
       <div
         class="container"
-        data-testid="gallery-item-1"
+        data-testid="gallery-container"
       >
-        <div
-          class=""
-        >
-          <img
-            alt="image1 alt text"
-            class="image medium"
-            data-testid="galleryItemImage"
-            loading="lazy"
-            src="https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg"
-          />
+        <div>
+          <div
+            class="container"
+            data-testid="gallery-item-1"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="image1 alt text"
+                class="image medium"
+                data-testid="galleryItemImage"
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2023/08/08/15/01/flower-8177578_640.jpg"
+              />
+            </div>
+            <div
+              class="SkeletonItem medium"
+              data-testid="skeleton"
+            />
+          </div>
         </div>
-        <div
-          class="SkeletonItem medium"
-          data-testid="skeleton"
-        />
+        <div>
+          <div
+            class="container"
+            data-testid="gallery-item-2"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="image2 alt text"
+                class="image medium"
+                data-testid="galleryItemImage"
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2023/04/21/11/51/flower-7941764_640.jpg"
+              />
+            </div>
+            <div
+              class="SkeletonItem medium"
+              data-testid="skeleton"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            class="container"
+            data-testid="gallery-item-3"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="image3 alt text"
+                class="image medium"
+                data-testid="galleryItemImage"
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2024/01/17/17/22/bee-8515123_960_720.jpg"
+              />
+            </div>
+            <div
+              class="SkeletonItem medium"
+              data-testid="skeleton"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            class="container"
+            data-testid="gallery-item-4"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="image4 alt text"
+                class="image medium"
+                data-testid="galleryItemImage"
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2023/04/11/22/08/flower-7918323_960_720.jpg"
+              />
+            </div>
+            <div
+              class="SkeletonItem medium"
+              data-testid="skeleton"
+            />
+          </div>
+        </div>
+        <div>
+          <div
+            class="container"
+            data-testid="gallery-item-5"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="image5 alt text"
+                class="image medium"
+                data-testid="galleryItemImage"
+                loading="lazy"
+                src="https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8039502_960_720.jpg"
+              />
+            </div>
+            <div
+              class="SkeletonItem medium"
+              data-testid="skeleton"
+            />
+          </div>
+        </div>
       </div>
     </div>
-    <div>
+    <div
+      class="scrollbar hiddenScrollbar"
+      data-testid="scrollTrack"
+    >
       <div
-        class="container"
-        data-testid="gallery-item-2"
-      >
-        <div
-          class=""
-        >
-          <img
-            alt="image2 alt text"
-            class="image medium"
-            data-testid="galleryItemImage"
-            loading="lazy"
-            src="https://cdn.pixabay.com/photo/2023/04/21/11/51/flower-7941764_640.jpg"
-          />
-        </div>
-        <div
-          class="SkeletonItem medium"
-          data-testid="skeleton"
-        />
-      </div>
-    </div>
-    <div>
-      <div
-        class="container"
-        data-testid="gallery-item-3"
-      >
-        <div
-          class=""
-        >
-          <img
-            alt="image3 alt text"
-            class="image medium"
-            data-testid="galleryItemImage"
-            loading="lazy"
-            src="https://cdn.pixabay.com/photo/2024/01/17/17/22/bee-8515123_960_720.jpg"
-          />
-        </div>
-        <div
-          class="SkeletonItem medium"
-          data-testid="skeleton"
-        />
-      </div>
-    </div>
-    <div>
-      <div
-        class="container"
-        data-testid="gallery-item-4"
-      >
-        <div
-          class=""
-        >
-          <img
-            alt="image4 alt text"
-            class="image medium"
-            data-testid="galleryItemImage"
-            loading="lazy"
-            src="https://cdn.pixabay.com/photo/2023/04/11/22/08/flower-7918323_960_720.jpg"
-          />
-        </div>
-        <div
-          class="SkeletonItem medium"
-          data-testid="skeleton"
-        />
-      </div>
-    </div>
-    <div>
-      <div
-        class="container"
-        data-testid="gallery-item-5"
-      >
-        <div
-          class=""
-        >
-          <img
-            alt="image5 alt text"
-            class="image medium"
-            data-testid="galleryItemImage"
-            loading="lazy"
-            src="https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8039502_960_720.jpg"
-          />
-        </div>
-        <div
-          class="SkeletonItem medium"
-          data-testid="skeleton"
-        />
-      </div>
+        class="thumb"
+        data-testid="scrollThumb"
+        style="width: 20%; transform: translateX(NaNpx);"
+      />
     </div>
   </div>
 </div>

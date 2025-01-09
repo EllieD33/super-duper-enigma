@@ -48,6 +48,9 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
         const { clientWidth, scrollWidth } = contentRef.current;
         const trackWidth = trackRef.current.clientWidth;
 
+        console.log("clientWidth: ", clientWidth);
+        console.log("scrollWidth: ", scrollWidth);
+
         const hasOverflow = scrollWidth > clientWidth;
         setIsScrollbarVisible(hasOverflow);
 

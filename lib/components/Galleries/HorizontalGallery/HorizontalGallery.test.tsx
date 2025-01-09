@@ -31,9 +31,9 @@ describe("HorizontalGallery", () => {
         });
     });
 
-    it("should apply the correct container class", () => {
+    it("should apply the scrollableContainer class", () => {
         const { container } = render(<HorizontalGallery {...defaultProps} />);
-        expect(container.firstChild).toHaveClass("container");
+        expect(container.firstChild).toHaveClass("scrollableContainer");
     });
 
     it("should render nothing when images array is empty", () => {
