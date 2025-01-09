@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scrollbar should render the component 1`] = `
+<div>
+  <div
+    class="scrollableContainer"
+    data-testid="scrollContainer"
+  >
+    <div
+      class="contentContainer"
+      data-testid="contentContainer"
+    >
+      <div
+        style="display: flex;"
+      >
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          1
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          2
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          3
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          4
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          5
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          6
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          7
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          8
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          9
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          10
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          11
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          12
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          13
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          14
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          15
+        </div>
+        <div
+          style="margin: 0px 5px;"
+        >
+          Item 
+          16
+        </div>
+      </div>
+    </div>
+    <div
+      class="scrollbar hiddenScrollbar"
+      data-testid="scrollTrack"
+    >
+      <div
+        class="thumb"
+        data-testid="scrollThumb"
+        style="width: 20%; transform: translateX(NaNpx);"
+      />
+    </div>
+  </div>
+</div>
+`;
