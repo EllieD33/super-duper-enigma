@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should render the default component 1`] = `
+<p
+  class="left"
+  style="color: rgb(51, 51, 51); font-weight: 400; font-size: 1rem; font-family: 'Open Sans', sans-serif;"
+>
+  I am some test text
+</p>
+`;
