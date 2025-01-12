@@ -14,7 +14,7 @@ export enum TextTransform {
     None = "none",
     Uppercase = "uppercase",
     Lowercase = "lowercase",
-    Capitalise = "capitalize",
+    Capitalise = "capitalise",
 }
 
 export enum FontSize {
@@ -23,6 +23,12 @@ export enum FontSize {
     Large = "1.25rem",
     XL = "1.5rem",
     XXL = "2rem",
+    Heading1 = "2rem",
+    Heading2 = "1.75rem",
+    Heading3 = "1.5rem",
+    Heading4 = "1.25rem",
+    Heading5 = "1.125rem",
+    Heading6 = "1rem",
 }
 
 export enum FontFamily {
