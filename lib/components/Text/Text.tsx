@@ -1,7 +1,12 @@
 import React, { ReactElement } from "react";
 import { TextTag } from "../../constants/TextTags";
 import { Colours } from "../../constants/Colours";
-import { FontFamily, FontSize, FontWeight } from "../../constants/Typography";
+import {
+    FontFamily,
+    FontSize,
+    FontWeight,
+    Typography,
+} from "../../constants/Typography";
 import styles from "./Text.module.css";
 
 export interface TextProps {
@@ -14,26 +19,32 @@ export interface TextProps {
     align?: "left" | "centre" | "right";
 }
 
+const TextTagKeys = Object.fromEntries(
+    Object.entries(TextTag).map(([key, value]) => [value, key])
+) as Record<TextTag, keyof typeof Typography>;
+
 const Text = ({
     children,
     as: Tag = TextTag.Paragraph,
     colour = Colours.Gray,
-    weight = FontWeight.Regular,
-    size = FontSize.Medium,
-    font = FontFamily.Body,
     align = "left",
+    weight,
+    size,
+    font,
 }: TextProps): ReactElement => {
-    const inlineStyles = {
-        color: colour,
-        fontWeight: Tag.startsWith("h") ? FontWeight.Bold : weight,
-        fontSize: Tag.startsWith("h")
-            ? FontSize[`${Tag}` as keyof typeof FontSize]
-            : size,
-        fontFamily: Tag.startsWith("h") ? FontFamily.Heading : font,
-    };
+    const typographyKey = TextTagKeys[Tag];
+    const typography = Typography[typographyKey];
 
     return (
-        <Tag className={styles[align as keyof TextProps]} style={inlineStyles}>
+        <Tag
+            className={styles[align as keyof typeof styles]}
+            style={{
+                color: colour,
+                fontWeight: weight ?? typography.fontWeight,
+                fontSize: size ?? typography.fontSize,
+                fontFamily: font ?? typography.fontFamily,
+            }}
+        >
             {children}
         </Tag>
     );
