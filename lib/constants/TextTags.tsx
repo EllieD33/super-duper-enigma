@@ -1,6 +1,6 @@
 export enum TextTag {
-    Span = "span",
     Paragraph = "p",
+    Span = "span",
     Heading1 = "h1",
     Heading2 = "h2",
     Heading3 = "h3",
