@@ -13,6 +13,7 @@ import { isValidTagForChildren } from "./helpers/isValidTagForChildren";
 export interface TextProps {
     children: React.ReactNode;
     as?: TextTag;
+    styleAs?: keyof typeof TextTag;
     colour?: Colours;
     weight?: FontWeight;
     size?: FontSize;
@@ -27,6 +28,7 @@ const TextTagKeys = Object.fromEntries(
 const Text = ({
     children,
     as: Tag = TextTag.Paragraph,
+    styleAs,
     colour = Colours.Gray,
     align = "left",
     weight,
@@ -39,7 +41,7 @@ const Text = ({
         );
     }
 
-    const typographyKey = TextTagKeys[Tag];
+    const typographyKey = styleAs || TextTagKeys[Tag];
     const typography = Typography[typographyKey];
 
     return (

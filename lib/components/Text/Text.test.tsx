@@ -4,7 +4,6 @@ import Text, { TextProps } from "./Text";
 import { TextTag } from "../../constants/TextTags";
 import { Colours } from "../../constants/Colours";
 import { FontFamily, FontSize, FontWeight } from "../../constants/Typography";
-import { Heading1 } from "./Text.stories";
 
 const defaultProps: TextProps = {
     children: "I am some test text",
@@ -58,6 +57,18 @@ describe("Text", () => {
                 "font-family: 'Open Sans', sans-serif"
             );
         });
+    });
+
+    it("should apply typography styles specified via styleAs", () => {
+        const { container } = render(
+            <Text styleAs={"Heading1"}>{defaultProps.children}</Text>
+        );
+
+        const element = container.querySelector("p");
+        expect(container.firstChild).toHaveStyle(
+            "font-family: 'Roboto', sans-serif"
+        );
+        expect(element).toBeInTheDocument();
     });
 
     it("should render Text with custom colour prop", () => {
