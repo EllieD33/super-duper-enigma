@@ -29,7 +29,8 @@
         "prepublishOnly": "npm run build",
         "test-storybook": "test-storybook",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "create-component": "node create-component.js"
     },
     "peerDependencies": {
         "react": "^18.3.1",
