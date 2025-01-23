@@ -4,6 +4,7 @@ import Text, { TextProps } from "./Text";
 import { TextTag } from "../../constants/TextTags";
 import { Colours } from "../../constants/Colours";
 import { FontFamily, FontSize, FontWeight } from "../../constants/Typography";
+import { Heading1 } from "./Text.stories";
 
 const defaultProps: TextProps = {
     children: "I am some test text",
@@ -96,8 +97,33 @@ describe("Text", () => {
         expect(textElement).toHaveStyle(`font-family: ${FontFamily.System}`);
     });
 
-    it("should render without errors if nested children passed", () => {});
+    it("should render with nested children passed", () => {
+        render(
+            <Text>
+                This has a<a>Link</a>
+            </Text>
+        );
 
-    //not allow nested h tags
-    //no p, div or lists with p tags
+        const linkElement = screen.getByText(/Link/);
+        expect(linkElement).toBeInTheDocument();
+    });
+
+    it("should give a console warning when invalid child tags are passed", () => {
+        const warnSpy = jest
+            .spyOn(console, "warn")
+            .mockImplementation(() => {});
+        render(
+            <Text as={TextTag.Heading1}>
+                This has a<h2>nested heading</h2>
+            </Text>
+        );
+
+        expect(warnSpy).toHaveBeenCalledWith(
+            expect.stringContaining(
+                "Warning: The children provided are not valid"
+            )
+        );
+
+        warnSpy.mockRestore();
+    });
 });

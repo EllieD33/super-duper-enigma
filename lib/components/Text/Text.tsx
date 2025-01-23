@@ -8,6 +8,7 @@ import {
     Typography,
 } from "../../constants/Typography";
 import styles from "./Text.module.css";
+import { isValidTagForChildren } from "./helpers/isValidTagForChildren";
 
 export interface TextProps {
     children: React.ReactNode;
@@ -32,6 +33,12 @@ const Text = ({
     size,
     font,
 }: TextProps): ReactElement => {
+    if (!isValidTagForChildren(Tag, children)) {
+        console.warn(
+            `Warning: The children provided are not valid for the <${Tag}> tag.`
+        );
+    }
+
     const typographyKey = TextTagKeys[Tag];
     const typography = Typography[typographyKey];
 
