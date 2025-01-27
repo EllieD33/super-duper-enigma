@@ -80,7 +80,7 @@ const defaultProps: ${componentName}Props = {};
 
 describe('${componentName}', () => {
     it('should render the default component', () => {
-        render(<${componentNamePascalCase} {...defaultProps} />);
+        render(<${componentName} {...defaultProps} />);
         expect(screen.getByTestId('')).toBeInTheDocument();
     });
 });
@@ -88,13 +88,8 @@ describe('${componentName}', () => {
 
 fs.writeFileSync(testFile, testContent);
 
-const cssModuleFile = path.join(
-    componentDir,
-    `${componentNamePascalCase}.module.css`
-);
+const cssModuleFile = path.join(componentDir, `${componentName}.module.css`);
 fs.writeFileSync(cssModuleFile, "");
 
-console.log(
-    `✅ Files successfully created for component: ${componentNamePascalCase}`
-);
+console.log(`✅ Files successfully created for component: ${componentName}`);
 console.log(`📂 Location: ${componentDir}`);

@@ -30,7 +30,7 @@
         "test-storybook": "test-storybook",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "create-component": "node create-component.js"
+        "create-component": "node scripts/generate-component.js"
     },
     "peerDependencies": {
         "react": "^18.3.1",
