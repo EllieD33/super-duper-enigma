@@ -48,7 +48,7 @@ const storiesContent = `import type { Meta, StoryObj } from "@storybook/react";
 import ${componentName}, { ${componentName}Props } from "./${componentName}";
 
 const meta = {
-    title: "Library/${folderName}/${componentName}s/${componentName}",
+    title: "Library/${process.argv[3] ? folderName + "/" : ""}${componentName}/${componentName}",
     component: ${componentName},
     parameters: {
         layout: "centered",
