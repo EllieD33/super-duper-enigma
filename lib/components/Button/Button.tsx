@@ -1,11 +1,12 @@
 import React, { ReactElement, ReactNode } from "react";
+import { FaHeart } from "react-icons/fa";
 import styles from "./Button.module.css";
 import clsx from "clsx";
 import { Spacing } from "../../constants/Spacings";
 import { FontSize } from "../../constants/Typography";
 
 export interface ButtonProps {
-    buttonText: string;
+    buttonText?: string;
     variant?: "primary" | "secondary" | "tertiary" | "icon";
     size?: "small" | "medium" | "large";
     disabled?: boolean;
@@ -14,15 +15,28 @@ export interface ButtonProps {
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button = ({
-    buttonText,
-    variant = "primary",
-    size = "medium",
-    disabled = false,
-    loading = false,
-    icon,
-    onClick,
-}: ButtonProps): ReactElement => {
+type ButtonPropsWithText = Omit<ButtonProps, "buttonText"> & {
+    buttonText: string;
+    size?: "small" | "medium" | "large";
+};
+
+type ButtonPropsIconOnly = Omit<ButtonProps, "buttonText"> & {
+    buttonText?: never;
+};
+
+const Button = (
+    props: ButtonPropsWithText | ButtonPropsIconOnly
+): ReactElement => {
+    const {
+        buttonText,
+        variant = "primary",
+        size = "medium",
+        disabled,
+        loading,
+        icon,
+        onClick,
+    } = props;
+
     const sizeStyles = {
         small: {
             paddingLeft: Spacing.Spacing2,
@@ -55,11 +69,27 @@ const Button = ({
         [styles.disabled]: disabled || loading,
     });
 
+    if (variant === "icon") {
+        return (
+            <button
+                onClick={onClick}
+                disabled={disabled || loading}
+                aria-label="like button"
+                className={styles.iconButton}
+                data-testid="button"
+            >
+                {icon ? icon : <FaHeart className={styles.icon} />}
+            </button>
+        );
+    }
+
     return (
         <button
             data-testid="button"
             className={buttonClassNames}
             style={currentSizeStyles}
+            onClick={onClick}
+            disabled={disabled || loading}
         >
             {buttonText}
         </button>
