@@ -1,0 +1,4 @@
+.chipSet {
+    display: flex;
+    flex-wrap: wrap;
+}

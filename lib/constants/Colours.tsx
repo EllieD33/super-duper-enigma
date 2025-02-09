@@ -15,14 +15,13 @@ export enum Colours {
 }
 
 export enum PastelColors {
-    Gray = "#B0B0B0",
-    Red = "#F1A8A0",
-    Blue = "#A1BFD7",
-    DarkBlue = "#A3C6D8",
-    Green = "#A8E6A3",
-    Yellow = "#F2F2A9",
-    Purple = "#9E8DC0",
     Orange = "#F2BC8E",
+    Blue = "#A1BFD7",
+    Red = "#F1A8A0",
+    Green = "#A8E6A3",
+    Purple = "#9E8DC0",
+    Yellow = "#F2F2A9",
+    Gray = "#B0B0B0",
     Teal = "#8ED1C5",
     Pink = "#F7A8B8",
 }

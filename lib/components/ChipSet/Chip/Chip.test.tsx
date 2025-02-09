@@ -19,4 +19,9 @@ describe("Chip", () => {
             `background-color: ${PastelColors.Green}`
         );
     });
+
+    it("should not render a chip if passed an empty string", () => {
+        const { container } = render(<Chip chipText="" />);
+        expect(container.firstChild).toBeNull();
+    });
 });
