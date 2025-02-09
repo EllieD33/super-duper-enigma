@@ -59,10 +59,7 @@
 .iconButton {
     background-color: transparent;
     border: none;
-}
-
-.icon {
-    font-size: 24px;
+    width: fit-content;
 }
 
 .icon:hover {

@@ -1,41 +1,39 @@
 import React, { ReactElement, ReactNode } from "react";
-import { FaHeart } from "react-icons/fa";
 import styles from "./Button.module.css";
 import clsx from "clsx";
 import { Spacing } from "../../constants/Spacings";
 import { FontSize } from "../../constants/Typography";
 
-export interface ButtonProps {
-    buttonText?: string;
-    variant?: "primary" | "secondary" | "tertiary" | "icon";
-    size?: "small" | "medium" | "large";
+export interface CommonButtonProps {
     disabled?: boolean;
     loading?: boolean;
-    icon?: ReactNode;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-type ButtonPropsWithText = Omit<ButtonProps, "buttonText"> & {
-    buttonText: string;
+export interface TextButtonProps extends CommonButtonProps {
+    variant?: "primary" | "secondary" | "tertiary";
     size?: "small" | "medium" | "large";
-};
+    buttonText: string;
+}
 
-type ButtonPropsIconOnly = Omit<ButtonProps, "buttonText"> & {
+export interface IconButtonProps extends CommonButtonProps {
+    variant: "icon";
+    icon: ReactNode;
     buttonText?: never;
-};
+}
 
-const Button = (
-    props: ButtonPropsWithText | ButtonPropsIconOnly
-): ReactElement => {
+export type ButtonProps = TextButtonProps | IconButtonProps;
+
+const Button = (props: ButtonProps): ReactElement => {
     const {
         buttonText,
         variant = "primary",
-        size = "medium",
         disabled,
         loading,
-        icon,
         onClick,
     } = props;
+
+    const size = "size" in props ? (props.size ?? "medium") : undefined;
 
     const sizeStyles = {
         small: {
@@ -56,7 +54,8 @@ const Button = (
     };
 
     const currentSizeStyles =
-        sizeStyles[size as keyof typeof sizeStyles] || sizeStyles.medium;
+        (size && sizeStyles[size as keyof typeof sizeStyles]) ||
+        sizeStyles.medium;
 
     const buttonClassNames = clsx(styles.button, {
         [styles.primary]: variant === "primary",
@@ -70,15 +69,17 @@ const Button = (
     });
 
     if (variant === "icon") {
+        const icon = "icon" in props && props.icon;
+        const iconStyles = clsx(styles.iconButton, styles.button);
         return (
             <button
                 onClick={onClick}
                 disabled={disabled || loading}
                 aria-label="like button"
-                className={styles.iconButton}
+                className={iconStyles}
                 data-testid="button"
             >
-                {icon ? icon : <FaHeart className={styles.icon} />}
+                {icon}
             </button>
         );
     }

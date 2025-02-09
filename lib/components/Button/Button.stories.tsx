@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button, { ButtonProps } from "./Button";
+import { FaHeart } from "react-icons/fa";
 
 const meta = {
     title: "Library/Button/Button",
@@ -73,5 +74,6 @@ export const IconDefault: Story = {
     args: {
         onClick: () => {},
         variant: "icon",
+        icon: <FaHeart size={24} />,
     },
 };
