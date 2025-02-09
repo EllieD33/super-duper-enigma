@@ -1,6 +1,9 @@
 import React, { ReactElement, useState } from "react";
 import styles from "./GalleryItem.module.css";
 import clsx from "clsx";
+import Text from "../../Text/Text";
+import { TextTag } from "../../../constants/TextTags";
+import { Colours } from "../../../constants/Colours";
 
 export interface GalleryItemProps {
     imageUrl: string;
@@ -54,7 +57,15 @@ const GalleryItem = ({
                     data-testid="galleryItemImage"
                 />
                 {overlayText && (
-                    <div className={overlayContentStyles}>{overlayText}</div>
+                    <div className={overlayContentStyles}>
+                        <Text
+                            as={TextTag.Span}
+                            colour={Colours.White}
+                            styleAs={"Heading1"}
+                        >
+                            {overlayText}
+                        </Text>
+                    </div>
                 )}
             </div>
             {isLoading && !hasError && (

@@ -74,7 +74,6 @@ describe("GalleryItem", () => {
 
         const overlayElement = screen.getByText(overlayText);
         expect(overlayElement).toBeInTheDocument();
-        expect(overlayElement).toHaveClass("overlayContent");
     });
 
     it("should not render the overlay when overlayText is not provided", () => {
