@@ -14,6 +14,19 @@ export enum Colours {
     Pink = "#EF476F",
 }
 
+export enum PastelColors {
+    Gray = "#B0B0B0",
+    Red = "#F1A8A0",
+    Blue = "#A1BFD7",
+    DarkBlue = "#A3C6D8",
+    Green = "#A8E6A3",
+    Yellow = "#F2F2A9",
+    Purple = "#9E8DC0",
+    Orange = "#F2BC8E",
+    Teal = "#8ED1C5",
+    Pink = "#F7A8B8",
+}
+
 export enum ErrorColours {
     Light = "#EF9A9A",
     Main = "#F44336",
