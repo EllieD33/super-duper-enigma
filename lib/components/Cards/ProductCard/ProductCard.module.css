@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 28px -4px rgba(94, 94, 94, 1);
+}
+
+.cardTextContentArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRowContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imageArea {
+    display: grid;
+    & > * {
+        grid-area: 1/1;
+    }
+}
+
+.likeButton {
+    z-index: 10;
+    place-self: start end;
+}
