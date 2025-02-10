@@ -25,18 +25,29 @@
 
 .overlayContent {
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    color: white;
-    font-size: 1rem;
+
     text-align: center;
-    opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-.overlayContainer:hover .overlayContent {
+.overlayStatic {
+    align-items: end;
+}
+
+.staticWrapper {
+    margin-bottom: 30px;
+}
+
+.overlayHover {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0;
+}
+
+.overlayContainer:hover .overlayHover {
     opacity: 1;
 }
 

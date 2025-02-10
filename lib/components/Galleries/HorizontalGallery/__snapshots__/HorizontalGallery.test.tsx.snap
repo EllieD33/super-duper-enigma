@@ -19,9 +19,7 @@ exports[`HorizontalGallery should render the default component 1`] = `
             class="container"
             data-testid="gallery-item-1"
           >
-            <div
-              class=""
-            >
+            <div>
               <img
                 alt="image1 alt text"
                 class="image medium"
@@ -41,9 +39,7 @@ exports[`HorizontalGallery should render the default component 1`] = `
             class="container"
             data-testid="gallery-item-2"
           >
-            <div
-              class=""
-            >
+            <div>
               <img
                 alt="image2 alt text"
                 class="image medium"
@@ -63,9 +59,7 @@ exports[`HorizontalGallery should render the default component 1`] = `
             class="container"
             data-testid="gallery-item-3"
           >
-            <div
-              class=""
-            >
+            <div>
               <img
                 alt="image3 alt text"
                 class="image medium"
@@ -85,9 +79,7 @@ exports[`HorizontalGallery should render the default component 1`] = `
             class="container"
             data-testid="gallery-item-4"
           >
-            <div
-              class=""
-            >
+            <div>
               <img
                 alt="image4 alt text"
                 class="image medium"
@@ -107,9 +99,7 @@ exports[`HorizontalGallery should render the default component 1`] = `
             class="container"
             data-testid="gallery-item-5"
           >
-            <div
-              class=""
-            >
+            <div>
               <img
                 alt="image5 alt text"
                 class="image medium"

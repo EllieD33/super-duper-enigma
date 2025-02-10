@@ -48,10 +48,19 @@ export const Large: Story = {
     } as GalleryItemProps,
 };
 
-export const WithTextOverlay: Story = {
+export const WithStaticTextOverlay: Story = {
     args: {
         ...defaultProps,
         overlayText: "Hello",
+        overlayDisplay: "static",
+    } as GalleryItemProps,
+};
+
+export const WithHoverTextOverlay: Story = {
+    args: {
+        ...defaultProps,
+        overlayText: "Hello",
+        overlayDisplay: "hover",
     } as GalleryItemProps,
 };
 

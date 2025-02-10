@@ -11,6 +11,7 @@ export interface GalleryItemProps {
     imageId: number;
     size?: "small" | "medium" | "large";
     overlayText?: string;
+    overlayDisplay?: "hover" | "static";
 }
 
 const GalleryItem = ({
@@ -19,17 +20,20 @@ const GalleryItem = ({
     imageId,
     size,
     overlayText,
+    overlayDisplay,
 }: GalleryItemProps): ReactElement => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [hasError, setHasError] = useState<boolean>(false);
 
     const galleryItemStyles = clsx(styles.image, size && styles[size]);
     const skeletonItemStyles = clsx(styles.SkeletonItem, size && styles[size]);
-    const overlayContainerStyles = overlayText
-        ? clsx(styles.overlayContainer)
-        : "";
-    const overlayContentStyles = overlayText ? clsx(styles.overlayContent) : "";
-
+    const overlayContainerStyles = overlayText && styles.overlayContainer;
+    const overlayContentStyles = clsx(styles.overlayContent, {
+        [styles.overlayHover]: overlayDisplay === "hover",
+        [styles.overlayStatic]: overlayDisplay === "static",
+    });
+    const staticWrapperStyles =
+        overlayDisplay === "static" && styles.staticWrapper;
     const fallbackImage = "https://placehold.co/600";
 
     const handleImageLoad = () => {
@@ -58,13 +62,15 @@ const GalleryItem = ({
                 />
                 {overlayText && (
                     <div className={overlayContentStyles}>
-                        <Text
-                            as={TextTag.Span}
-                            colour={Colours.White}
-                            styleAs={"Heading1"}
-                        >
-                            {overlayText}
-                        </Text>
+                        <div className={clsx(staticWrapperStyles)}>
+                            <Text
+                                as={TextTag.Span}
+                                colour={Colours.White}
+                                styleAs={"Heading1"}
+                            >
+                                {overlayText}
+                            </Text>
+                        </div>
                     </div>
                 )}
             </div>

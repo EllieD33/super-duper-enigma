@@ -11,9 +11,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-1"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image1 alt text"
             class="image"
@@ -33,9 +31,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-2"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image2 alt text"
             class="image"
@@ -55,9 +51,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-3"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image3 alt text"
             class="image"
@@ -77,9 +71,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-4"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image4 alt text"
             class="image"
@@ -99,9 +91,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-5"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image5 alt text"
             class="image"
@@ -121,9 +111,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-6"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image6 alt text"
             class="image"
@@ -143,9 +131,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-7"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image7 alt text"
             class="image"
@@ -165,9 +151,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-8"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image8 alt text"
             class="image"
@@ -187,9 +171,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-9"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image9 alt text"
             class="image"
@@ -209,9 +191,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-10"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image10 alt text"
             class="image"
@@ -231,9 +211,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-11"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image11 alt text"
             class="image"
@@ -253,9 +231,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-12"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image12 alt text"
             class="image"
@@ -275,9 +251,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-13"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image13 alt text"
             class="image"
@@ -297,9 +271,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-14"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image14 alt text"
             class="image"
@@ -319,9 +291,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-15"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image15 alt text"
             class="image"
@@ -341,9 +311,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-16"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image16 alt text"
             class="image"
@@ -363,9 +331,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-17"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image17 alt text"
             class="image"
@@ -385,9 +351,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-18"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image18 alt text"
             class="image"
@@ -407,9 +371,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-19"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image19 alt text"
             class="image"
@@ -429,9 +391,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-20"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image20 alt text"
             class="image"
@@ -451,9 +411,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-21"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image21 alt text"
             class="image"
@@ -473,9 +431,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-22"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image22 alt text"
             class="image"
@@ -495,9 +451,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-23"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image23 alt text"
             class="image"
@@ -517,9 +471,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-24"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image24 alt text"
             class="image"
@@ -539,9 +491,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-25"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image25 alt text"
             class="image"
@@ -561,9 +511,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-26"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image26 alt text"
             class="image"
@@ -583,9 +531,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-27"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image27 alt text"
             class="image"
@@ -605,9 +551,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-28"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image28 alt text"
             class="image"
@@ -627,9 +571,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-29"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image29 alt text"
             class="image"
@@ -649,9 +591,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-30"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image30 alt text"
             class="image"
@@ -671,9 +611,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-31"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image31 alt text"
             class="image"
@@ -693,9 +631,7 @@ exports[`MasonryGallery should render the default component 1`] = `
         class="container"
         data-testid="gallery-item-32"
       >
-        <div
-          class=""
-        >
+        <div>
           <img
             alt="image32 alt text"
             class="image"
