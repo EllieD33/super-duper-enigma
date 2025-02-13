@@ -10,6 +10,6 @@ const defaultProps: ProductCardProps = {
 describe("ProductCard", () => {
     it("should render the default component", () => {
         render(<ProductCard {...defaultProps} />);
-        expect(screen.getByTestId("productCard")).toBeInTheDocument();
+        expect(screen.getByTestId(/productCard/)).toBeInTheDocument();
     });
 });
