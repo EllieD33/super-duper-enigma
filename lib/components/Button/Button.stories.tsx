@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button, { ButtonProps } from "./Button";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaCheck } from "react-icons/fa";
 
 const meta = {
     title: "Library/Button/Button",
@@ -45,6 +45,13 @@ export const Tertiary: Story = {
     args: {
         ...defaultProps,
         variant: "tertiary",
+    },
+};
+
+export const TextWithIcon: Story = {
+    args: {
+        ...defaultProps,
+        icon: <FaCheck />,
     },
 };
 

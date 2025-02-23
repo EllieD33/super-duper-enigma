@@ -7,24 +7,30 @@
     display: inline-block;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .primary {
     background-color: #073b4c;
+    border: 2px solid #073b4c;
     color: #fff;
 }
 
 .primary:hover {
+    border: 2px solid #33839c;
     background-color: #33839c;
 }
 
 .secondary {
     background-color: #0db39e;
+    border: 2px solid #0db39e;
     color: #fff;
 }
 
 .secondary:hover {
+    border: 2px solid #128072;
     background-color: #128072;
 }
 
@@ -37,6 +43,11 @@
 .tertiary:hover {
     background-color: #073b4c;
     color: #fff;
+}
+
+.iconWithText {
+    display: flex;
+    gap: 8px;
 }
 
 .large {

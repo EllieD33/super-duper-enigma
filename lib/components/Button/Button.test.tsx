@@ -29,6 +29,14 @@ describe("Button Component", () => {
         expect(button.querySelector("svg")).toBeInTheDocument();
     });
 
+    it("should render a text button with icon if both text and icon are passed", () => {
+        render(<Button {...defaultProps} icon={<FaHeart />} />);
+        const button = screen.getByTestId("button");
+        expect(button).toBeInTheDocument();
+        expect(button).toHaveTextContent("Click me");
+        expect(button.querySelector("svg")).toBeInTheDocument();
+    });
+
     it("should apply the correct size styles", () => {
         render(<Button {...defaultProps} size="large" />);
         const button = screen.getByTestId("button");

@@ -14,6 +14,7 @@ export interface TextButtonProps extends CommonButtonProps {
     variant?: "primary" | "secondary" | "tertiary";
     size?: "small" | "medium" | "large";
     buttonText: string;
+    icon?: ReactNode;
 }
 
 export interface IconButtonProps extends CommonButtonProps {
@@ -26,6 +27,7 @@ export type ButtonProps = TextButtonProps | IconButtonProps;
 
 const Button = (props: ButtonProps): ReactElement => {
     const {
+        icon,
         buttonText,
         variant = "primary",
         disabled,
@@ -66,6 +68,7 @@ const Button = (props: ButtonProps): ReactElement => {
         [styles.medium]: size === "medium",
         [styles.large]: size === "large",
         [styles.disabled]: disabled || loading,
+        [styles.iconWithText]: buttonText && icon,
     });
 
     if (variant === "icon") {
@@ -92,6 +95,7 @@ const Button = (props: ButtonProps): ReactElement => {
             onClick={onClick}
             disabled={disabled || loading}
         >
+            {icon && icon}
             {buttonText}
         </button>
     );
