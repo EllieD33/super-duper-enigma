@@ -54,6 +54,8 @@ const ProductCard = ({
                 <div className={styles.likeButton} style={iconStyles}>
                     <Button
                         variant="icon"
+                        ariaLabel="Like button"
+                        ariaPressed={isLiked}
                         icon={
                             <FaHeart
                                 color={isLiked ? Colours.Pink : Colours.White}

@@ -7,6 +7,8 @@ import { FontSize } from "../../constants/Typography";
 export interface CommonButtonProps {
     disabled?: boolean;
     loading?: boolean;
+    ariaPressed?: boolean;
+    ariaLabel?: string;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -32,6 +34,8 @@ const Button = (props: ButtonProps): ReactElement => {
         variant = "primary",
         disabled,
         loading,
+        ariaPressed,
+        ariaLabel,
         onClick,
     } = props;
 
@@ -78,7 +82,8 @@ const Button = (props: ButtonProps): ReactElement => {
             <button
                 onClick={onClick}
                 disabled={disabled || loading}
-                aria-label="like button"
+                aria-label={ariaLabel}
+                aria-pressed={ariaPressed}
                 className={iconStyles}
                 data-testid="button"
             >
