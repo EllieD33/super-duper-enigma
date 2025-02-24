@@ -12,7 +12,7 @@ import { Colours } from "../../../constants/Colours";
 import ChipSet from "../../ChipSet/ChipSet";
 
 type ProductInfo = {
-    productId: number | string;
+    id: number | string;
     productImage: GalleryItemProps;
     productName: string;
     productDescription: string;
@@ -31,13 +31,8 @@ const ProductCard = ({
 }: ProductCardProps): ReactElement => {
     const [isLiked, setIsLiked] = useState<boolean>(false);
 
-    const {
-        productId,
-        productName,
-        productDescription,
-        productPrice,
-        productTags,
-    } = productInfo;
+    const { id, productName, productDescription, productPrice, productTags } =
+        productInfo;
     const iconStyles = {
         marginRight: Spacing.Spacing5,
         marginTop: Spacing.Spacing4,
@@ -48,7 +43,7 @@ const ProductCard = ({
     };
 
     return (
-        <div className={styles.card} data-testid={`productCard-${productId}`}>
+        <div className={styles.card} data-testid={`productCard-${id}`}>
             <div className={styles.imageArea}>
                 <GalleryItem {...productInfo.productImage} />
                 <div className={styles.likeButton} style={iconStyles}>

@@ -85,7 +85,7 @@ const Button = (props: ButtonProps): ReactElement => {
                 aria-label={ariaLabel}
                 aria-pressed={ariaPressed}
                 className={iconStyles}
-                data-testid="button"
+                data-testid="icon-button"
             >
                 {icon}
             </button>
@@ -94,11 +94,13 @@ const Button = (props: ButtonProps): ReactElement => {
 
     return (
         <button
-            data-testid="button"
+            data-testid={`button-${buttonText}`}
             className={buttonClassNames}
             style={currentSizeStyles}
             onClick={onClick}
             disabled={disabled || loading}
+            aria-label={ariaLabel}
+            aria-pressed={ariaPressed}
         >
             {icon && icon}
             {buttonText}

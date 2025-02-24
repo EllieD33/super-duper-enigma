@@ -15,7 +15,7 @@ export const mockProducts: ProductCardProps[] = Array.from(
     { length: mockImages.length },
     (_, index) => ({
         productInfo: {
-            productId: index + 1,
+            id: index + 1,
             productImage: mockImages[index],
             productName: `Product ${convertNumberToWords(index + 1)}`,
             productDescription:

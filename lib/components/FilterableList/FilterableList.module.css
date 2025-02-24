@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.filterGroup {
+    display: flex;
+    gap: 8px;
+}

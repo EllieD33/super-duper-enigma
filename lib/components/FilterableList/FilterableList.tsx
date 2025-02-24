@@ -1,20 +1,19 @@
 import React, { ReactElement, useState } from "react";
 import styles from "./FilterableList.module.css";
-import ProductCard, {
-    ProductCardProps,
-} from "../Cards/ProductCard/ProductCard";
+import { ProductCardProps } from "../Cards/ProductCard/ProductCard";
 import Text from "../Text/Text";
 import { convertToPascalCase } from "../../utils/convertToPascalCase";
 import { getNestedProperty } from "../../utils/getNestedProperty";
+import { TextTag } from "../../constants/TextTags";
+import { Spacing } from "../../constants/Spacings";
+import Button from "../Button/Button";
+import { FaCheck } from "react-icons/fa";
+import { findItemId } from "../../utils/findItemId";
 
-type filterableComponents = {
-    ProductCard: ProductCardProps;
-};
-
-// inspo: https://dribbble.com/shots/24478424-slothUI-Figma-Design-System-for-Gen-Z-Hotel-Listing-Card-UI
+export type filterableComponents = ProductCardProps;
 
 export interface FilterableListProps {
-    listItems: any[];
+    listItems: filterableComponents[];
     renderItem: (item: any) => ReactElement;
     filterSelectors: string[];
     filterProperty: string;
@@ -37,34 +36,64 @@ const FilterableList = ({
           })
         : listItems;
 
+    const handleFilterClick = (selector: string | null) => {
+        setSelectedFilter((prevFilter) =>
+            prevFilter === selector ? null : selector
+        );
+    };
+
     return (
         <div data-testid={"filterableList"}>
-            <div>
+            <div
+                role="group"
+                aria-label="Filter categories"
+                className={styles.filterGroup}
+            >
+                <Button
+                    variant={selectedFilter === null ? "primary" : "tertiary"}
+                    buttonText="All"
+                    icon={selectedFilter === null ? <FaCheck /> : undefined}
+                    ariaPressed={selectedFilter === null}
+                    ariaLabel="Show all"
+                    onClick={() => handleFilterClick(null)}
+                />
                 {filterSelectors.map((selector) => (
-                    <button
+                    <Button
                         key={selector}
-                        onClick={() =>
-                            setSelectedFilter(
-                                selectedFilter === selector ? null : selector
-                            )
+                        variant={
+                            selectedFilter === selector ? "primary" : "tertiary"
                         }
-                    >
-                        {convertToPascalCase(selector)}
-                    </button>
+                        buttonText={convertToPascalCase(selector)}
+                        icon={
+                            selectedFilter === selector ? (
+                                <FaCheck />
+                            ) : undefined
+                        }
+                        ariaPressed={selectedFilter === selector}
+                        ariaLabel={`Show ${selector}`}
+                        onClick={() => handleFilterClick(selector)}
+                    />
                 ))}
-                <button onClick={() => setSelectedFilter(null)}>All</button>
             </div>
-            <div>
+            <ul
+                className={styles.list}
+                style={{ margin: `${Spacing.Spacing4}px 0` }}
+            >
                 {filteredItems.length > 0 ? (
                     filteredItems.map((item, index) => (
-                        <div key={item.id || index} className={styles.listItem}>
+                        <li
+                            key={findItemId(item) || index}
+                            data-testid="listItem"
+                        >
                             {renderItem(item)}
-                        </div>
+                        </li>
                     ))
                 ) : (
-                    <Text>No results found.</Text>
+                    <li data-testid="listItem">
+                        <Text as={TextTag.Span}>No results found.</Text>
+                    </li>
                 )}
-            </div>
+            </ul>
         </div>
     );
 };

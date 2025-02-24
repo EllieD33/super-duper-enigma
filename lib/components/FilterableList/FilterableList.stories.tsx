@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 const defaultProps: FilterableListProps = {
     listItems: mockProducts,
     renderItem: (item) => <ProductCard {...item} />,
-    filterSelectors: ["sale", "electronics"],
+    filterSelectors: ["Sale", "Electronics"],
     filterProperty: "productInfo.productTags",
 };
 
