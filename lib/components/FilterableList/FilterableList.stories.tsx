@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import FilterableList, { FilterableListProps } from "./FilterableList";
 import { mockProducts } from "../Cards/testData/testData";
 import ProductCard from "../Cards/ProductCard/ProductCard";
-import { convertToPascalCase } from "../../utils/convertToPascalCase";
 
 const meta = {
     title: "Library/FilterableList/FilterableList",
@@ -21,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 const defaultProps: FilterableListProps = {
     listItems: mockProducts,
     renderItem: (item) => <ProductCard {...item} />,
-    filterSelectors: ["Sale", "Electronics"],
+    filterSelectors: ["Sale", "Electronics", "Fashion", "Gadgets", "Trending"],
     filterProperty: "productInfo.productTags",
 };
 

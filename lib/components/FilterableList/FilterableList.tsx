@@ -9,6 +9,7 @@ import { Spacing } from "../../constants/Spacings";
 import Button from "../Button/Button";
 import { FaCheck } from "react-icons/fa";
 import { findItemId } from "../../utils/findItemId";
+import { motion, AnimatePresence } from "framer-motion";
 
 export type filterableComponents = ProductCardProps;
 
@@ -75,25 +76,46 @@ const FilterableList = ({
                     />
                 ))}
             </div>
-            <ul
+            <motion.ul
                 className={styles.list}
                 style={{ margin: `${Spacing.Spacing4}px 0` }}
             >
-                {filteredItems.length > 0 ? (
-                    filteredItems.map((item, index) => (
-                        <li
-                            key={findItemId(item) || index}
+                <AnimatePresence>
+                    {filteredItems.length > 0 ? (
+                        filteredItems.map((item, index) => (
+                            <motion.li
+                                key={findItemId(item) || index}
+                                data-testid="listItem"
+                                layout
+                                initial={false}
+                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                exit={{ opacity: 0, x: -50, scale: 0.9 }}
+                                transition={{
+                                    duration: 0.3,
+                                    type: "tween",
+                                    ease: "easeOut",
+                                }}
+                                style={{ position: "relative" }}
+                            >
+                                {renderItem(item)}
+                            </motion.li>
+                        ))
+                    ) : (
+                        <motion.li
                             data-testid="listItem"
+                            className={styles.noResults}
+                            style={{ padding: Spacing.Spacing5 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                         >
-                            {renderItem(item)}
-                        </li>
-                    ))
-                ) : (
-                    <li data-testid="listItem">
-                        <Text as={TextTag.Span}>No results found.</Text>
-                    </li>
-                )}
-            </ul>
+                            <Text as={TextTag.Span} styleAs={"Heading4"}>
+                                No results found.
+                            </Text>
+                        </motion.li>
+                    )}
+                </AnimatePresence>
+            </motion.ul>
         </div>
     );
 };

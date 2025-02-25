@@ -25,13 +25,14 @@ describe("FilterableList", () => {
         expect(list.length).toBe(mockProducts.length);
     });
 
-    it("should filter items displayed based selected filter", () => {
+    it("should filter items displayed based selected filter", async () => {
         render(<FilterableList {...defaultProps} />);
+
         const filterButton = screen.getByTestId("button-Electronics");
         fireEvent.click(filterButton);
 
         const filteredProducts = mockProducts.filter((product) =>
-            product.productInfo.productTags!.includes("button-Electronics")
+            product.productInfo.productTags!.includes("Electronics")
         );
 
         filteredProducts.forEach((product) => {
@@ -45,10 +46,12 @@ describe("FilterableList", () => {
                 !product.productInfo.productTags!.includes("Electronics")
         );
 
-        nonFilteredProducts.forEach((product) => {
-            expect(
-                screen.queryByText(product.productInfo.productName)
-            ).not.toBeInTheDocument();
+        await waitFor(() => {
+            nonFilteredProducts.forEach((product) => {
+                expect(
+                    screen.queryByText(product.productInfo.productName)
+                ).not.toBeInTheDocument();
+            });
         });
     });
 
