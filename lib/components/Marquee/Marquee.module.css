@@ -1,0 +1,52 @@
+.marqueeContainer {
+    width: 100vw;
+    overflow: hidden;
+    box-shadow:
+        0 -5px 10px rgba(0, 0, 0, 0.1),
+        0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.track {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+}
+
+.marqueeItem {
+    flex: none;
+    white-space: nowrap;
+    padding: 24px;
+}
+
+.noWrap {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.forward {
+    animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.reverse {
+    animation: marqueeReverse 30s linear infinite;
+}
+
+@keyframes marqueeReverse {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
