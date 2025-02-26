@@ -1,6 +1,18 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Marquee, { MarqueeProps } from "./Marquee";
+import {
+    FaAws,
+    FaCcAmex,
+    FaCcVisa,
+    FaEbay,
+    FaFedex,
+    FaFigma,
+    FaPlaystation,
+    FaSoundcloud,
+    FaStripe,
+    FaUps,
+} from "react-icons/fa";
 
 const meta = {
     title: "Library/Marquee/Marquee",
@@ -15,7 +27,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultProps = {
+const textItems = {
     items: [
         "This is my marquee",
         "An endless loop",
@@ -26,22 +38,50 @@ const defaultProps = {
     ],
 };
 
+const iconItems = {
+    items: [
+        <FaFigma size={32} color="gray" />,
+        <FaStripe size={32} color="gray" />,
+        <FaCcVisa size={32} color="gray" />,
+        <FaUps size={32} color="gray" />,
+        <FaEbay size={32} color="gray" />,
+        <FaAws size={32} color="gray" />,
+        <FaSoundcloud size={32} color="gray" />,
+        <FaPlaystation size={32} color="gray" />,
+        <FaFedex size={32} color="gray" />,
+        <FaCcAmex size={32} color="gray" />,
+    ],
+};
+
 export const Default: Story = {
     args: {
-        ...defaultProps,
+        ...textItems,
     },
 };
 
 export const Reverse: Story = {
     args: {
-        ...defaultProps,
+        ...textItems,
         reverse: true,
     },
 };
 
 export const Both: Story = {
     args: {
-        ...defaultProps,
+        ...textItems,
+    },
+    render: (args) => (
+        <>
+            <Marquee {...args} />
+            <div style={{ height: "2rem" }}></div>
+            <Marquee {...args} reverse={true} />
+        </>
+    ),
+};
+
+export const Icons: Story = {
+    args: {
+        ...iconItems,
     },
     render: (args) => (
         <>
