@@ -38,6 +38,13 @@ describe("Marquee", () => {
         expect(track).toHaveClass(/forward/);
     });
 
+    it("applies the edgeFade class when edgeFade prop is passed", () => {
+        render(<Marquee {...defaultProps} edgeFade={true} />);
+
+        const marqueeContainer = screen.getByTestId("marqueeContainer");
+        expect(marqueeContainer).toHaveClass(/edgeFade/);
+    });
+
     it("handles dynamically updated arrays", () => {
         const { rerender } = render(<Marquee {...defaultProps} />);
 

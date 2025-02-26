@@ -50,6 +50,16 @@ const iconItems = {
         <FaPlaystation size={32} color="gray" />,
         <FaFedex size={32} color="gray" />,
         <FaCcAmex size={32} color="gray" />,
+        <FaFigma size={32} color="gray" />,
+        <FaStripe size={32} color="gray" />,
+        <FaCcVisa size={32} color="gray" />,
+        <FaUps size={32} color="gray" />,
+        <FaEbay size={32} color="gray" />,
+        <FaAws size={32} color="gray" />,
+        <FaSoundcloud size={32} color="gray" />,
+        <FaPlaystation size={32} color="gray" />,
+        <FaFedex size={32} color="gray" />,
+        <FaCcAmex size={32} color="gray" />,
     ],
 };
 
@@ -82,6 +92,34 @@ export const Both: Story = {
 export const Icons: Story = {
     args: {
         ...iconItems,
+    },
+    render: (args) => (
+        <>
+            <Marquee {...args} />
+            <div style={{ height: "2rem" }}></div>
+            <Marquee {...args} reverse={true} />
+        </>
+    ),
+};
+
+export const IconsEdgeFade: Story = {
+    args: {
+        ...iconItems,
+        edgeFade: true,
+    },
+    render: (args) => (
+        <>
+            <Marquee {...args} />
+            <div style={{ height: "2rem" }}></div>
+            <Marquee {...args} reverse={true} />
+        </>
+    ),
+};
+
+export const TextEdgeFade: Story = {
+    args: {
+        ...textItems,
+        edgeFade: true,
     },
     render: (args) => (
         <>
