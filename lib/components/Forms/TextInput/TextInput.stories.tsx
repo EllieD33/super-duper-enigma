@@ -41,3 +41,41 @@ export const Default: Story = {
         );
     },
 };
+
+export const WithLabel: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                value={text}
+                label={{ labelText: "Input label", labelPosition: "top" }}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
+
+export const WithFloatingLabel: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                value={text}
+                label={{ labelText: "Input label", labelPosition: "floating" }}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
