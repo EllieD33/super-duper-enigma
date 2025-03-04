@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Input, { TextInputProps } from "./TextInput";
 
 const defaultProps: TextInputProps = {
@@ -64,5 +64,34 @@ describe("Input", () => {
         render(<Input {...defaultProps} />);
         const input = screen.getByTestId(`${defaultProps.name}-input`);
         expect(input).toHaveAttribute("aria-label", defaultProps.name);
+    });
+
+    it("should provide an aria-label for the clear field button if label is not provided", () => {
+        render(<Input {...defaultProps} clearFieldButton={true} />);
+        const clearButton = screen.getByLabelText(/clear field/i);
+        expect(clearButton).toHaveAttribute("aria-label", "Clear field");
+    });
+
+    it("should clear the input field when the clear button is clicked", () => {
+        const mockOnChange = jest.fn();
+        render(
+            <Input
+                {...defaultProps}
+                value="test value"
+                onChange={mockOnChange}
+                clearFieldButton={true}
+            />
+        );
+
+        const clearButton = screen.getByLabelText(/clear field/i);
+        fireEvent.click(clearButton);
+
+        expect(mockOnChange).toHaveBeenCalledWith(
+            expect.objectContaining({
+                target: {
+                    value: "",
+                },
+            })
+        );
     });
 });

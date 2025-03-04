@@ -73,7 +73,7 @@ const TextInput = ({
             {clearFieldButton && (
                 <div className={clearButtonStyles}>
                     <Button
-                        aria-label="Clear field"
+                        ariaLabel="Clear field"
                         variant="icon"
                         onClick={() =>
                             onChange({
