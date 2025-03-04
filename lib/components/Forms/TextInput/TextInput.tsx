@@ -1,7 +1,9 @@
-import React, { ReactElement, Dispatch, SetStateAction } from "react";
+import React, { ReactElement } from "react";
 import styles from "./TextInput.module.css";
 import { Typography } from "../../../constants/Typography";
 import clsx from "clsx";
+import Button from "../../Button/Button";
+import { FaTimesCircle } from "react-icons/fa";
 
 export interface TextInputProps {
     name: string;
@@ -16,6 +18,7 @@ export interface TextInputProps {
         labelText?: string;
         labelPosition?: "floating" | "top";
     };
+    clearFieldButton?: boolean;
 }
 
 const TextInput = ({
@@ -28,6 +31,7 @@ const TextInput = ({
     success,
     disabled,
     label,
+    clearFieldButton,
 }: TextInputProps): ReactElement => {
     const inputStyles = clsx(styles.input, {
         [styles.error]: error,
@@ -35,6 +39,12 @@ const TextInput = ({
         [styles.disabled]: disabled,
         [styles.inputFloatingLabel]: label?.labelPosition === "floating",
     });
+
+    const clearButtonStyles = clsx(styles.clearButton, {
+        [styles.clearButtonTop]: label?.labelPosition === "top",
+        [styles.clearButtonFloat]: label?.labelPosition !== "top",
+    });
+
     return (
         <div className={styles.inputContainer}>
             {label && (
@@ -60,6 +70,20 @@ const TextInput = ({
                 style={{ ...Typography.Paragraph }}
                 data-testid={`${name}-input`}
             />
+            {clearFieldButton && (
+                <div className={clearButtonStyles}>
+                    <Button
+                        aria-label="Clear field"
+                        variant="icon"
+                        onClick={() =>
+                            onChange({
+                                target: { value: "" },
+                            } as React.ChangeEvent<HTMLInputElement>)
+                        }
+                        icon={<FaTimesCircle />}
+                    />
+                </div>
+            )}
         </div>
     );
 };

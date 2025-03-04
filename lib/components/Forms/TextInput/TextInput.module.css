@@ -56,3 +56,25 @@ input:focus {
 .inputFloatingLabel {
     padding-top: 20px;
 }
+
+.clearButton {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+.clearButtonFloatLabel {
+    top: 50%;
+}
+
+.clearButtonTopLabel {
+    top: 68%;
+}
+
+.clearButton:hover {
+    opacity: 0.7;
+}
