@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState, MouseEventHandler } from "react";
 import styles from "./ProductCard.module.css";
 import GalleryItem, {
     GalleryItemProps,
@@ -23,11 +23,13 @@ type ProductInfo = {
 export interface ProductCardProps {
     productInfo: ProductInfo;
     buttonText: string;
+    buttonOnClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 const ProductCard = ({
     productInfo,
     buttonText,
+    buttonOnClick,
 }: ProductCardProps): ReactElement => {
     const [isLiked, setIsLiked] = useState<boolean>(false);
 
@@ -73,7 +75,7 @@ const ProductCard = ({
                 {productTags && <ChipSet chipText={productTags} />}
                 <div className={styles.flexRowContainer}>
                     <Text styleAs={"Heading1"}>£{productPrice}</Text>
-                    <Button buttonText={buttonText} onClick={() => {}} />
+                    <Button buttonText={buttonText} onClick={buttonOnClick} />
                 </div>
             </div>
         </div>

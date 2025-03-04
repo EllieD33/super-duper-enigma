@@ -24,5 +24,6 @@ export const mockProducts: ProductCardProps[] = Array.from(
             productTags: tagOptions[index % tagOptions.length],
         },
         buttonText: "Add to basket",
+        buttonOnClick: () => {},
     })
 );

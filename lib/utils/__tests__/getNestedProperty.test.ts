@@ -63,4 +63,48 @@ describe("getNestedProperty", () => {
         );
         expect(result).toBe("travel");
     });
+
+    it("should return the correct value when accessing an array element using an index", () => {
+        const obj = {
+            user: {
+                friends: ["Alice", "Bob", "Charlie"],
+            },
+        };
+
+        const result = getNestedProperty(obj, "user.friends[1]");
+        expect(result).toBe("Bob");
+    });
+
+    it("should return undefined if the index is out of bounds", () => {
+        const obj = {
+            user: {
+                friends: ["Alice", "Bob", "Charlie"],
+            },
+        };
+
+        const result = getNestedProperty(obj, "user.friends[5]");
+        expect(result).toBeUndefined();
+    });
+
+    it("should return undefined if the property is not an array", () => {
+        const obj = {
+            user: {
+                name: "John",
+            },
+        };
+
+        const result = getNestedProperty(obj, "user.name[0]");
+        expect(result).toBeUndefined();
+    });
+
+    it("should return undefined if the property does not exist", () => {
+        const obj = {
+            user: {
+                name: "John",
+            },
+        };
+
+        const result = getNestedProperty(obj, "user.friends[0]");
+        expect(result).toBeUndefined();
+    });
 });

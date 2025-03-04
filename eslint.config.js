@@ -28,6 +28,7 @@ export default tseslint.config(
                 { blankLine: "always", prev: "var", next: "function" },
                 { blankLine: "always", prev: "block", next: "block" },
             ],
+            "no-console": ["error", { allow: [] }],
         },
     }
 );

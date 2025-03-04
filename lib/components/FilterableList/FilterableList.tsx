@@ -101,18 +101,9 @@ const FilterableList = ({
                             </motion.li>
                         ))
                     ) : (
-                        <motion.li
-                            data-testid="listItem"
-                            className={styles.noResults}
-                            style={{ padding: Spacing.Spacing5 }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <Text as={TextTag.Span} styleAs={"Heading4"}>
-                                No results found.
-                            </Text>
-                        </motion.li>
+                        <Text as={TextTag.Span} styleAs={"Heading4"}>
+                            No results found.
+                        </Text>
                     )}
                 </AnimatePresence>
             </motion.ul>

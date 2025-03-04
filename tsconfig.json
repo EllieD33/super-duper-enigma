@@ -16,6 +16,7 @@
     "lib/**/*.tsx",                // Include all TSX files if you're using React
     "setupTests.ts",               // Make sure Jest setup files are included
     "**/*.test.ts",                // Include test files
-    "**/*.test.tsx"                // Include test files
+    "**/*.test.tsx",                // Include test files
+    "types/**/*.d.ts",
   ]
 }

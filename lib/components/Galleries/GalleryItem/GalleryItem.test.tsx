@@ -82,4 +82,17 @@ describe("GalleryItem", () => {
         const overlayElement = screen.queryByText(/overlayContent/i);
         expect(overlayElement).toBeNull();
     });
+
+    it("should apply staticWrapper class is overlayDisplay is set to static", () => {
+        const overlayText = "Overlay Text";
+        render(
+            <GalleryItem
+                {...defaultProps}
+                overlayText={overlayText}
+                overlayDisplay="static"
+            />
+        );
+        const overlayElementWrapper = screen.getByTestId(/staticWrapper/);
+        expect(overlayElementWrapper).toHaveClass(/staticWrapper/);
+    });
 });

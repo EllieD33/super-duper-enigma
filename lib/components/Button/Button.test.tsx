@@ -37,6 +37,12 @@ describe("Button Component", () => {
         expect(button.querySelector("svg")).toBeInTheDocument();
     });
 
+    it("should apply the default size styles if no size is undefined", () => {
+        render(<Button {...defaultProps} size={undefined} />);
+        const button = screen.getByTestId(`button-${defaultProps.buttonText}`);
+        expect(button).toHaveStyle("font-size: 1rem");
+    });
+
     it("should apply the correct size styles", () => {
         render(<Button {...defaultProps} size="large" />);
         const button = screen.getByTestId(`button-${defaultProps.buttonText}`);

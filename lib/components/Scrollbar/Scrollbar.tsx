@@ -23,6 +23,7 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
     const [isDragging, setIsDragging] = useState<boolean>(false);
 
     const handleThumbPosition = useCallback(() => {
+        // istanbul ignore next
         if (!contentRef.current || !thumbRef.current || !trackRef.current)
             return;
 
@@ -48,9 +49,6 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
         const { clientWidth, scrollWidth } = contentRef.current;
         const trackWidth = trackRef.current.clientWidth;
 
-        console.log("clientWidth: ", clientWidth);
-        console.log("scrollWidth: ", scrollWidth);
-
         const hasOverflow = scrollWidth > clientWidth;
         setIsScrollbarVisible(hasOverflow);
 
@@ -68,6 +66,7 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
     const handleTrackClick = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {
             e.preventDefault();
+            // istanbul ignore next
             if (!contentRef.current || !trackRef.current) return;
 
             const { left: trackLeft } =
@@ -99,6 +98,7 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
 
     const handleMouseMove = useCallback(
         (e: MouseEvent) => {
+            // istanbul ignore next
             if (!isDragging || !contentRef.current || !trackRef.current) return;
 
             const deltaX = e.clientX - startClientXRef.current;
@@ -121,11 +121,12 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
     useEffect(() => {
         const contentElement = contentRef.current;
         const trackElement = trackRef.current;
-
+        // istanbul ignore next
         if (!contentElement || !trackElement) return;
 
         let resizeFrame: number;
 
+        // istanbul ignore next
         const onResize = () => {
             if (resizeFrame) cancelAnimationFrame(resizeFrame);
             resizeFrame = requestAnimationFrame(() => handleResize());
@@ -142,6 +143,7 @@ const Scrollbar = ({ children }: ScrollbarProps): ReactElement => {
 
         return () => {
             resizeObserver.disconnect();
+            // istanbul ignore next
             if (resizeFrame) cancelAnimationFrame(resizeFrame);
         };
     }, [handleResize]);

@@ -15,8 +15,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// const defaultProps = {};
-
 export const Default: Story = {
     args: {
         ...mockProducts[0],

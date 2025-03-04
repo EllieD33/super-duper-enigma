@@ -62,7 +62,10 @@ const GalleryItem = ({
                 />
                 {overlayText && (
                     <div className={overlayContentStyles}>
-                        <div className={clsx(staticWrapperStyles)}>
+                        <div
+                            className={clsx(staticWrapperStyles)}
+                            data-testid="staticWrapper"
+                        >
                             <Text
                                 as={TextTag.Span}
                                 colour={Colours.White}

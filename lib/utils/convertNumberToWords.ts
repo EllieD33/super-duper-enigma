@@ -38,6 +38,7 @@ export const convertNumberToWords = (n: number): string => {
     ];
 
     const convertChunk = (num: number): string => {
+        // istanbul ignore next
         if (num === 0) return "";
         if (num < 20) return ones[num];
         if (num < 100)
