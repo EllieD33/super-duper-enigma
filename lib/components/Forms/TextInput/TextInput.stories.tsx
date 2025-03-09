@@ -99,3 +99,79 @@ export const WithClearFieldButton: Story = {
         );
     },
 };
+
+export const Email: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                type="email"
+                value={text}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
+
+export const Tel: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                type="tel"
+                value={text}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
+
+export const Password: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                type="password"
+                value={text}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
+
+export const URL: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                type="url"
+                value={text}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};

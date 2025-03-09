@@ -3,9 +3,16 @@ import styles from "./TextInput.module.css";
 import { Typography } from "../../../constants/Typography";
 import clsx from "clsx";
 import Button from "../../Button/Button";
-import { FaTimesCircle } from "react-icons/fa";
+import {
+    FaLink,
+    FaPhoneAlt,
+    FaRegEnvelope,
+    FaTimesCircle,
+} from "react-icons/fa";
+import { Colours } from "../../../constants/Colours";
 
 export interface TextInputProps {
+    type?: "text" | "email" | "password" | "tel" | "url";
     name: string;
     value: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -22,6 +29,7 @@ export interface TextInputProps {
 }
 
 const TextInput = ({
+    type = "text",
     name,
     value,
     onChange,
@@ -33,16 +41,34 @@ const TextInput = ({
     label,
     clearFieldButton,
 }: TextInputProps): ReactElement => {
+    const iconProps = {
+        size: 14,
+        color: Colours.Blue,
+    };
+
+    const decorativeIconMap = {
+        email: <FaRegEnvelope {...iconProps} />,
+        tel: <FaPhoneAlt {...iconProps} />,
+        url: <FaLink {...iconProps} />,
+    };
+
     const inputStyles = clsx(styles.input, {
         [styles.error]: error,
         [styles.success]: success,
         [styles.disabled]: disabled,
         [styles.inputFloatingLabel]: label?.labelPosition === "floating",
+        [styles.inputWithLeftIcon]:
+            decorativeIconMap[type as keyof typeof decorativeIconMap],
     });
 
-    const clearButtonStyles = clsx(styles.clearButton, {
-        [styles.clearButtonTopLabel]: label?.labelPosition === "top",
-        [styles.clearButtonFloatLabel]: label?.labelPosition !== "top",
+    const clearButtonStyles = clsx(styles.icon, styles.clearButton, {
+        [styles.iconTopPositionTopLabel]: label?.labelPosition === "top",
+        [styles.iconTopPosition]: label?.labelPosition !== "top",
+    });
+
+    const iconStyles = clsx(styles.icon, styles.leftIcon, {
+        [styles.iconTopPositionTopLabel]: label?.labelPosition === "top",
+        [styles.iconTopPosition]: label?.labelPosition !== "top",
     });
 
     return (
@@ -57,8 +83,13 @@ const TextInput = ({
                     {label.labelText}
                 </label>
             )}
+            {Object.keys(decorativeIconMap).includes(type) && (
+                <div className={iconStyles} data-testid={"leftIcon"}>
+                    {decorativeIconMap[type as keyof typeof decorativeIconMap]}
+                </div>
+            )}
             <input
-                type="text"
+                type={type}
                 id={name}
                 name={name}
                 placeholder={!label ? placeholder : undefined}

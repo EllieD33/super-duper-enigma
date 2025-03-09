@@ -66,6 +66,12 @@ describe("Input", () => {
         expect(input).toHaveAttribute("aria-label", defaultProps.name);
     });
 
+    it("should apply left icon if type has an icon mapped to it", () => {
+        render(<Input {...defaultProps} type="email" />);
+        const icon = screen.getByTestId("leftIcon");
+        expect(icon).toBeInTheDocument();
+    });
+
     it("should provide an aria-label for the clear field button if label is not provided", () => {
         render(<Input {...defaultProps} clearFieldButton={true} />);
         const clearButton = screen.getByLabelText(/clear field/i);

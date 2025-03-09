@@ -4,6 +4,10 @@
     padding: 5px;
 }
 
+.inputWithLeftIcon {
+    padding-left: 32px;
+}
+
 input::placeholder {
     color: gray;
     font-size: 0.9rem;
@@ -57,21 +61,29 @@ input:focus {
     padding-top: 20px;
 }
 
-.clearButton {
+.icon {
     position: absolute;
-    right: 10px;
     transform: translateY(-50%);
     background: transparent;
     border: none;
+    margin-top: 2px;
+}
+
+.leftIcon {
+    left: 10px;
+}
+
+.clearButton {
+    right: 10px;
     cursor: pointer;
     margin-top: 1px;
 }
 
-.clearButtonFloatLabel {
+.iconTopPosition {
     top: 50%;
 }
 
-.clearButtonTopLabel {
+.iconTopPositionTopLabel {
     top: 68%;
 }
 
