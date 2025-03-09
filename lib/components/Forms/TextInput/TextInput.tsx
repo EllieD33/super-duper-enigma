@@ -41,8 +41,8 @@ const TextInput = ({
     });
 
     const clearButtonStyles = clsx(styles.clearButton, {
-        [styles.clearButtonTop]: label?.labelPosition === "top",
-        [styles.clearButtonFloat]: label?.labelPosition !== "top",
+        [styles.clearButtonTopLabel]: label?.labelPosition === "top",
+        [styles.clearButtonFloatLabel]: label?.labelPosition !== "top",
     });
 
     return (

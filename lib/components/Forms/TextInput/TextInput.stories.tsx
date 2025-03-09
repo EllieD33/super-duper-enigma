@@ -79,3 +79,23 @@ export const WithFloatingLabel: Story = {
         );
     },
 };
+
+export const WithClearFieldButton: Story = {
+    args: { ...defaultProps },
+    render: (args) => {
+        const [text, setText] = useState(args.value || "");
+
+        return (
+            <TextInput
+                {...args}
+                clearFieldButton
+                value={text}
+                label={{ labelText: "Input label", labelPosition: "floating" }}
+                onChange={(e) => {
+                    setText(e.target.value);
+                    action("onChange")(e.target.value);
+                }}
+            />
+        );
+    },
+};
