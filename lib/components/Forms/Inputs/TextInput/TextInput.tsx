@@ -1,15 +1,15 @@
 import React, { ReactElement } from "react";
 import styles from "./TextInput.module.css";
-import { Typography } from "../../../constants/Typography";
+import { Typography } from "../../../../constants/Typography";
 import clsx from "clsx";
-import Button from "../../Button/Button";
+import Button from "../../../Button/Button";
 import {
     FaLink,
     FaPhoneAlt,
     FaRegEnvelope,
     FaTimesCircle,
 } from "react-icons/fa";
-import { Colours } from "../../../constants/Colours";
+import { Colours } from "../../../../constants/Colours";
 
 export interface TextInputProps {
     type?: "text" | "email" | "password" | "tel" | "url";

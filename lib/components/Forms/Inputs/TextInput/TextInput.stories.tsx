@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import TextInput from "./TextInput";
 
 const meta = {
-    title: "Library/Forms/Input/TextInput",
+    title: "Library/Forms/Inputs/TextInput",
     component: Input,
     parameters: {
         layout: "centered",
