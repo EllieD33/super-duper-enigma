@@ -42,6 +42,10 @@ input:focus {
     position: relative;
 }
 
+.inputRow {
+    display: flex;
+}
+
 .topLabel {
     padding: 0 0 2px 4px;
     color: #333333;
@@ -88,5 +92,14 @@ input:focus {
 }
 
 .clearButton:hover {
+    opacity: 0.7;
+}
+
+.passwordToggle {
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+.passwordToggle:hover {
     opacity: 0.7;
 }

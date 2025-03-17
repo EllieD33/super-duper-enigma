@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import styles from "./TextInput.module.css";
 import { Typography } from "../../../../constants/Typography";
 import clsx from "clsx";
@@ -8,6 +8,8 @@ import {
     FaPhoneAlt,
     FaRegEnvelope,
     FaTimesCircle,
+    FaEye,
+    FaEyeSlash,
 } from "react-icons/fa";
 import { Colours } from "../../../../constants/Colours";
 
@@ -41,6 +43,8 @@ const TextInput = ({
     label,
     clearFieldButton,
 }: TextInputProps): ReactElement => {
+    const [showPassword, setShowPassword] = useState<boolean>(false);
+
     const iconProps = {
         size: 14,
         color: Colours.Blue,
@@ -51,6 +55,12 @@ const TextInput = ({
         tel: <FaPhoneAlt {...iconProps} />,
         url: <FaLink {...iconProps} />,
     };
+
+    const passwordToggleIcon = showPassword ? (
+        <FaEyeSlash {...{ ...iconProps, size: 18 }} />
+    ) : (
+        <FaEye {...{ ...iconProps, size: 18 }} />
+    );
 
     const inputStyles = clsx(styles.input, {
         [styles.error]: error,
@@ -88,33 +98,50 @@ const TextInput = ({
                     {decorativeIconMap[type as keyof typeof decorativeIconMap]}
                 </div>
             )}
-            <input
-                type={type}
-                id={name}
-                name={name}
-                placeholder={!label ? placeholder : undefined}
-                aria-label={!label ? name : undefined}
-                required={required}
-                value={value}
-                onChange={onChange}
-                className={inputStyles}
-                style={{ ...Typography.Paragraph }}
-                data-testid={`${name}-input`}
-            />
-            {clearFieldButton && (
-                <div className={clearButtonStyles}>
-                    <Button
-                        ariaLabel="Clear field"
-                        variant="icon"
-                        onClick={() =>
-                            onChange({
-                                target: { value: "" },
-                            } as React.ChangeEvent<HTMLInputElement>)
-                        }
-                        icon={<FaTimesCircle />}
-                    />
-                </div>
-            )}
+            <div className={styles.inputRow}>
+                <input
+                    type={type === "password" && showPassword ? "text" : type}
+                    id={name}
+                    name={name}
+                    placeholder={!label ? placeholder : undefined}
+                    aria-label={!label ? name : undefined}
+                    required={required}
+                    value={value}
+                    onChange={onChange}
+                    className={inputStyles}
+                    style={{ ...Typography.Paragraph }}
+                    data-testid={`${name}-input`}
+                />
+                {clearFieldButton && (
+                    <div className={clearButtonStyles}>
+                        <Button
+                            ariaLabel="Clear field"
+                            variant="icon"
+                            onClick={() =>
+                                onChange({
+                                    target: { value: "" },
+                                } as React.ChangeEvent<HTMLInputElement>)
+                            }
+                            icon={<FaTimesCircle />}
+                        />
+                    </div>
+                )}
+                {type === "password" && (
+                    <div
+                        className={styles.passwordToggle}
+                        data-testid={"passwordToggle"}
+                    >
+                        <Button
+                            ariaLabel={
+                                showPassword ? "Hide password" : "Show password"
+                            }
+                            variant="icon"
+                            onClick={() => setShowPassword((prev) => !prev)}
+                            icon={passwordToggleIcon}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

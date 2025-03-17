@@ -100,4 +100,24 @@ describe("Input", () => {
             })
         );
     });
+
+    it("should render eye icon when type is password", () => {
+        render(<Input {...defaultProps} type="password" />);
+        const passwordIconContainer = screen.getByTestId("passwordToggle");
+        expect(passwordIconContainer).toBeInTheDocument();
+    });
+
+    it("should toggle password visiblity when button is clicked", () => {
+        render(<Input {...defaultProps} type="password" />);
+        const input = screen.getByTestId(/my-input/);
+        const toggleButton = screen.getByTestId("icon-button");
+
+        expect(input).toHaveAttribute("type", "password");
+
+        fireEvent.click(toggleButton);
+        expect(input).toHaveAttribute("type", "text");
+
+        fireEvent.click(toggleButton);
+        expect(input).toHaveAttribute("type", "password");
+    });
 });
