@@ -106,8 +106,10 @@ const TextInput = ({
                     placeholder={!label ? placeholder : undefined}
                     aria-label={!label ? name : undefined}
                     required={required}
+                    disabled={disabled}
                     value={value}
                     onChange={onChange}
+                    inputMode={type === "password" ? "text" : type}
                     className={inputStyles}
                     style={{ ...Typography.Paragraph }}
                     data-testid={`${name}-input`}
