@@ -1,0 +1,58 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.inputFieldContainer {
+    position: relative;
+    width: 100%;
+}
+
+.buttonPairContainer {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.numberInput {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+input:focus {
+    border-color: blue;
+    outline: 3px solid lightblue;
+}
+
+.disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    border-color: #d1d5db;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.success {
+    border-color: #4caf50;
+    outline: 2px solid #a5d6a7;
+}
+
+.error {
+    border-color: #f44336;
+    outline: 2px solid #ef9a9a;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
