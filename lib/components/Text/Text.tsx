@@ -9,6 +9,7 @@ import {
 } from "../../constants/Typography";
 import styles from "./Text.module.css";
 import { isValidTagForChildren } from "./helpers/isValidTagForChildren";
+import clsx from "clsx";
 
 export interface TextProps {
     children: React.ReactNode;
@@ -19,6 +20,7 @@ export interface TextProps {
     size?: FontSize;
     font?: FontFamily;
     align?: "left" | "centre" | "right";
+    className?: string;
 }
 
 const TextTagKeys = Object.fromEntries(
@@ -34,6 +36,7 @@ const Text = ({
     weight,
     size,
     font,
+    className,
 }: TextProps): ReactElement => {
     if (!isValidTagForChildren(Tag, children)) {
         console.warn(
@@ -46,7 +49,7 @@ const Text = ({
 
     return (
         <Tag
-            className={styles[align as keyof typeof styles]}
+            className={clsx(styles[align as keyof typeof styles], className)}
             style={{
                 color: colour,
                 fontWeight: weight ?? typography.fontWeight,
