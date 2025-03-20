@@ -33,13 +33,12 @@
 
 .marqueeItem {
     flex: none;
-    white-space: nowrap;
+    display: inline-block;
     padding: 24px;
 }
 
 .noWrap {
     white-space: nowrap;
-    display: inline-block;
 }
 
 .forward {
