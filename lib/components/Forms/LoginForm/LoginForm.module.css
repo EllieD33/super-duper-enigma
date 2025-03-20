@@ -1,0 +1,31 @@
+.flexWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.inputContainer {
+    width: fit-content;
+    justify-content: center;
+}
+
+.buttonContainer {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+form {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+}
+
+@media (max-width: 490px) {
+    .usernameInput {
+        margin-right: 24px;
+    }
+}

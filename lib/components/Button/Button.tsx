@@ -5,11 +5,12 @@ import { Spacing } from "../../constants/Spacings";
 import { FontSize } from "../../constants/Typography";
 
 export interface CommonButtonProps {
+    type?: "button" | "submit" | "reset";
     disabled?: boolean;
     loading?: boolean;
     ariaPressed?: boolean;
     ariaLabel?: string;
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface TextButtonProps extends CommonButtonProps {
@@ -29,6 +30,7 @@ export type ButtonProps = TextButtonProps | IconButtonProps;
 
 const Button = (props: ButtonProps): ReactElement => {
     const {
+        type = "button",
         icon,
         buttonText,
         variant = "primary",
@@ -80,6 +82,7 @@ const Button = (props: ButtonProps): ReactElement => {
         const iconStyles = clsx(styles.iconButton, styles.button);
         return (
             <button
+                type={type}
                 onClick={onClick}
                 disabled={disabled || loading}
                 aria-label={ariaLabel}
@@ -94,6 +97,7 @@ const Button = (props: ButtonProps): ReactElement => {
 
     return (
         <button
+            type={type}
             data-testid={`button-${buttonText}`}
             className={buttonClassNames}
             style={currentSizeStyles}
