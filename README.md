@@ -31,7 +31,7 @@ npm install
 npm run storybook
 ```
 
-This will open Storybook in your browser, where you can interact with them in isolation, explore their properties, and see how they behave in different scenarios.
+This will open Storybook in your browser, where you can interact with the components in isolation, explore their properties, and see how they behave in different scenarios.
 
 ## 🛠️ Development & Testing
 
