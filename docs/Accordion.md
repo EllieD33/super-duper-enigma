@@ -18,35 +18,14 @@ Each section has:
 - `heading` (`string`): The title of the section that will be shown in the summary.
 - `body` (`string`): The content of the section that will be revealed when the user clicks on the heading.
 
-## Usage
-
-```tsx
-import Accordion from "./Accordion";
-
-const sections = [
-    {
-        heading: "Section 1",
-        body: "This is the content of section 1.",
-    },
-    {
-        heading: "Section 2",
-        body: "This is the content of section 2.",
-    },
-];
-
-const App = () => {
-    return <Accordion content={sections} allowMultipleOpen={false} />;
-};
-```
-
-### Behavior
+## Behaviour
 
 - Single Open: If `allowMultipleOpen` is set to `false`, only one section can be open at a time. Clicking a section's heading will close any previously opened section.
 - Multiple Open: If `allowMultipleOpen` is set to `true` (the default), multiple sections can be open simultaneously.
 
 [Explore Accordion in Storybook](http://localhost:6006/?path=/story/library-accordion-accordion--default&globals=viewport:largeMobile)
 
-### Testing
+## Testing
 
 The `Accordion` component is tested using React Testing Library. The tests ensure that:
 
@@ -55,7 +34,7 @@ The `Accordion` component is tested using React Testing Library. The tests ensur
 - The sections are toggled independently from one another.
 - Only one section opens at a time if allowMultipleOpen is false.
 
-### Notes
+## Notes
 
 - The `Accordion` component uses the native `<details>` and `<summary>` HTML elements for accessibility. These elements are natively collapsible, so no JavaScript is required for toggling.
 - The component uses inline styles for the heading, pulling from the `Typography.Heading3` and `Colours.DarkBlue` constants for consistency in design.
