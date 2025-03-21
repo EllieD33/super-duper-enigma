@@ -12,18 +12,21 @@ Through this project, I’m practicing how to build scalable and reusable compon
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository  
+### 1️⃣ Clone the Repository
+
 ```sh
 git clone https://github.com/EllieD33/super-duper-enigma.git
 cd super-duper-enigma
 ```
 
 ### 2️⃣ Install Dependencies
+
 ```sh
 npm install
 ```
 
 ### 3️⃣ Run Storybook
+
 ```sh
 npm run storybook
 ```
@@ -31,6 +34,7 @@ npm run storybook
 This will open Storybook in your browser, where you can interact with them in isolation, explore their properties, and see how they behave in different scenarios.
 
 ## 🛠️ Development & Testing
+
 ### 🧪 Running the Test Suite
 
 Run the test suite using:
@@ -54,6 +58,7 @@ npm run create-component ComponentName [optional/directory]
 - If a directory is specified, it will be placed there instead.
 
 Each new component includes the following default structure:
+
 ```ruby
     ComponentName/
     ├── ComponentName.tsx      # The component file
@@ -61,7 +66,12 @@ Each new component includes the following default structure:
     ├── ComponentName.test.ts    # Unit tests (React Testing Library)
     ├── ComponentName.stories.tsx  # Storybook configuration
 ```
+
 This setup ensures that each component is immediately ready for development, styling, testing, and documentation in Storybook.
+
+## 📖 Documentation
+
+For detailed documentation on individual components, check the [component docs](./docs/).
 
 ## 📄 License
 
