@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from "react";
 import styles from "./TextInput.module.css";
-import { Typography } from "../../../../constants/Typography";
 import clsx from "clsx";
 import Button from "../../../Button/Button";
 import {
@@ -11,6 +10,9 @@ import {
     FaEye,
     FaEyeSlash,
 } from "react-icons/fa";
+import Text from "../../../Text/Text";
+import { Typography } from "../../../../constants/Typography";
+import { TextTag } from "../../../../constants/TextTags";
 import { Colours } from "../../../../constants/Colours";
 
 export interface TextInputProps {
@@ -144,6 +146,15 @@ const TextInput = ({
                     </div>
                 )}
             </div>
+            {error && (
+                <Text
+                    as={TextTag.Small}
+                    colour={Colours.Red}
+                    className={styles.errorMessage}
+                >
+                    {error}
+                </Text>
+            )}
         </div>
     );
 };

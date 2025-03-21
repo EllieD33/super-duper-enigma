@@ -120,4 +120,12 @@ describe("Input", () => {
         fireEvent.click(toggleButton);
         expect(input).toHaveAttribute("type", "password");
     });
+
+    it("displays error message and applies error styles if error message is passed", () => {
+        render(<Input {...defaultProps} error={"Test error"} />);
+        const input = screen.getByTestId(/my-input/);
+        const errorMessage = screen.getByText("Test error");
+        expect(input).toHaveClass("error");
+        expect(errorMessage).toBeInTheDocument();
+    });
 });
