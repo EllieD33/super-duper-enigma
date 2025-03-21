@@ -4,6 +4,9 @@ import clsx from "clsx";
 import { Typography } from "../../../../constants/Typography";
 import Button from "../../../Button/Button";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import Text from "../../../Text/Text";
+import { TextTag } from "../../../../constants/TextTags";
+import { Colours } from "../../../../constants/Colours";
 
 export interface NumberInputProps {
     name: string;
@@ -93,6 +96,15 @@ const NumberInput = ({
                     />
                 </div>
             </div>
+            {error && (
+                <Text
+                    as={TextTag.Small}
+                    colour={Colours.Red}
+                    className={styles.errorMessage}
+                >
+                    {error}
+                </Text>
+            )}
         </div>
     );
 };

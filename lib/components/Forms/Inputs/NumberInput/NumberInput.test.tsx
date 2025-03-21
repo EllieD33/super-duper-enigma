@@ -102,4 +102,12 @@ describe("NumberInput", () => {
         const input = screen.getByTestId(/numberInput/);
         expect(input).not.toHaveAttribute("aria-label");
     });
+
+    it("displays error message and applies error styles if error message is passed", () => {
+        render(<NumberInput {...defaultProps} error={"Test error"} />);
+        const input = screen.getByTestId(/numberInput/);
+        const errorMessage = screen.getByText("Test error");
+        expect(input).toHaveClass("error");
+        expect(errorMessage).toBeInTheDocument();
+    });
 });
