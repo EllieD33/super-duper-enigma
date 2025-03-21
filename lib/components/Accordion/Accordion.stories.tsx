@@ -30,3 +30,10 @@ export const Default: Story = {
         ...defaultProps,
     },
 };
+
+export const SinlgeOpening: Story = {
+    args: {
+        ...defaultProps,
+        allowMultipleOpen: false,
+    },
+};

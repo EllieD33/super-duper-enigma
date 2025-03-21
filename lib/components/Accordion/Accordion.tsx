@@ -9,13 +9,22 @@ type AccordionSection = { heading: string; body: string };
 
 export interface AccordionProps {
     content: AccordionSection[];
+    allowMultipleOpen?: boolean;
 }
 
-const Accordion = ({ content }: AccordionProps): ReactElement => {
+const Accordion = ({
+    content,
+    allowMultipleOpen = true,
+}: AccordionProps): ReactElement => {
     return (
         <div className={styles.accordion} data-testid={"accordion"}>
             {content.map((section) => (
-                <details key={section.heading}>
+                <details
+                    key={section.heading}
+                    name={
+                        allowMultipleOpen ? section.heading : content[0].heading
+                    }
+                >
                     <summary
                         style={{
                             ...Typography.Heading3,
