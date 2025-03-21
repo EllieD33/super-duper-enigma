@@ -26,4 +26,12 @@ describe("TextArea", () => {
         const charCount = screen.getByTestId("charCount");
         expect(charCount).toBeInTheDocument();
     });
+
+    it("displays error message and applies error styles if error message is passed", () => {
+        render(<TextArea {...defaultProps} error={"Test error"} />);
+        const input = screen.getByTestId(/textarea/).firstChild;
+        const errorMessage = screen.getByText("Test error");
+        expect(input).toHaveClass("error");
+        expect(errorMessage).toBeInTheDocument();
+    });
 });

@@ -1,7 +1,10 @@
 import React, { ReactElement } from "react";
 import styles from "./TextArea.module.css";
 import clsx from "clsx";
+import Text from "../../../Text/Text";
 import { Typography } from "../../../../constants/Typography";
+import { TextTag } from "../../../../constants/TextTags";
+import { Colours } from "../../../../constants/Colours";
 
 export interface TextAreaProps {
     name: string;
@@ -71,6 +74,15 @@ const TextArea = ({
                 >
                     <output>{value.length}</output>/{charLimit}
                 </div>
+            )}
+            {error && (
+                <Text
+                    as={TextTag.Small}
+                    colour={Colours.Red}
+                    className={styles.errorMessage}
+                >
+                    {error}
+                </Text>
             )}
         </div>
     );
