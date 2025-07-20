@@ -23,6 +23,7 @@ export enum FontSize {
     Large = "1.25rem",
     XL = "1.5rem",
     XXL = "2rem",
+    XXXL = "3rem",
     Heading1 = "2rem",
     Heading2 = "1.75rem",
     Heading3 = "1.5rem",
