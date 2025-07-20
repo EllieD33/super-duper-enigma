@@ -1,11 +1,13 @@
 .container {
     display: flex;
+    margin: 0 auto;
+    width: fit-content;
     flex-wrap: wrap;
     gap: 24px;
     padding: 24px;
     border: solid 1px #252525;
     border-radius: 12px;
-    background-color: #1b1b1b;
+    background-color: #1b1b1b80;
     /* background: #024259;
     background: linear-gradient(
         176deg,
@@ -26,6 +28,7 @@
     z-index: 1;
     overflow: hidden;
     background-color: #1b1b1b;
+    opacity: 1;
     position: relative;
 }
 

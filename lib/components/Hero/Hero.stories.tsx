@@ -5,7 +5,7 @@ const meta = {
     title: "Library/Hero/Hero",
     component: Hero,
     parameters: {
-        layout: "centered",
+        layout: "fullscreen",
     },
     tags: ["autodocs"],
     argTypes: {},
