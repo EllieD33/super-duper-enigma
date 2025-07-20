@@ -8,11 +8,11 @@ The `Marquee` component displays a continuous scrolling list of items (text or i
 
 ### `MarqueeProps`
 
-| Prop         | Type                    | Required | Description                                                                                  |
-| ------------ | ----------------------- | -------- | -------------------------------------------------------------------------------------------- |
-| `items`      | `any[]`                  | ✅       | An array of items to be displayed in the marquee. Items can be either text or icons.         |
-| `reverse`    | `boolean`                | ❌       | If `true`, the items will scroll from right to left. If `false` or not provided, they scroll from left to right. |
-| `edgeFade`   | `boolean`                | ❌       | If `true`, an edge fading effect will be applied to the start and end of the marquee.         |
+| Prop       | Type      | Required | Description                                                                                                      |
+| ---------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `items`    | `any[]`   | ✅       | An array of items to be displayed in the marquee. Items can be either text or icons.                             |
+| `reverse`  | `boolean` | ❌       | If `true`, the items will scroll from right to left. If `false` or not provided, they scroll from left to right. |
+| `edgeFade` | `boolean` | ❌       | If `true`, an edge fading effect will be applied to the start and end of the marquee.                            |
 
 ## Behaviour
 
@@ -30,4 +30,3 @@ The `Marquee` component displays a continuous scrolling list of items (text or i
 - The component relies on CSS classes to manage the scrolling behaviour and fading effects.
 - The scrolling direction is controlled using the `reverse` prop, and the fading effect is applied using the `edgeFade` prop.
 - The layout uses the `track` element to manage the scrolling content, ensuring smooth animation and looping.
-

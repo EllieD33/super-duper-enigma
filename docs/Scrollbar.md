@@ -8,9 +8,9 @@ The `Scrollbar` component provides a custom scrollbar for horizontally scrollabl
 
 ### `ScrollbarProps`
 
-| Prop         | Type                 | Required | Description                                                                                                                                 |
-| ------------ | -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`   | `React.ReactNode`     | ✅       | The content to be displayed inside the scrollable container. It can include any valid JSX elements or components.                          |
+| Prop       | Type              | Required | Description                                                                                                       |
+| ---------- | ----------------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `children` | `React.ReactNode` | ✅       | The content to be displayed inside the scrollable container. It can include any valid JSX elements or components. |
 
 ## Behaviour
 

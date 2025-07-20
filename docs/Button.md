@@ -8,25 +8,23 @@ The `Button` component provides a flexible and accessible button element that su
 
 ### Common Props (Applicable to All Variants)
 
-| Prop          | Type                                                   | Default    | Description                                        |
-|---------------|--------------------------------------------------------|------------|----------------------------------------------------|
-| `type`        | `"button" \| "submit" \| "reset"`                      | `"button"` | Defines the button type.                          |
-| `disabled`    | `boolean`                                              | `false`    | Disables the button when `true`.                  |
-| `loading`     | `boolean`                                              | `false`    | Displays a loading state (disables the button).   |
-| `ariaPressed` | `boolean`                                              | `undefined`| Indicates if the button is pressed (for accessibility). |
-| `ariaLabel`   | `string`                                               | `undefined`| Provides an accessible label for screen readers.  |
-| `onClick`     | `(e: React.MouseEvent<HTMLButtonElement>) => void`      | `undefined`| Function triggered on button click.               |
-
+| Prop          | Type                                               | Default     | Description                                             |
+| ------------- | -------------------------------------------------- | ----------- | ------------------------------------------------------- |
+| `type`        | `"button" \| "submit" \| "reset"`                  | `"button"`  | Defines the button type.                                |
+| `disabled`    | `boolean`                                          | `false`     | Disables the button when `true`.                        |
+| `loading`     | `boolean`                                          | `false`     | Displays a loading state (disables the button).         |
+| `ariaPressed` | `boolean`                                          | `undefined` | Indicates if the button is pressed (for accessibility). |
+| `ariaLabel`   | `string`                                           | `undefined` | Provides an accessible label for screen readers.        |
+| `onClick`     | `(e: React.MouseEvent<HTMLButtonElement>) => void` | `undefined` | Function triggered on button click.                     |
 
 ### Text Button Props
 
-| Prop         | Type                                                  | Default    | Description                                        |
-|--------------|-------------------------------------------------------|------------|----------------------------------------------------|
-| `variant`    | `"primary" \| "secondary" \| "tertiary"`              | `"primary"`| Defines the button style.                         |
-| `size`       | `"small" \| "medium" \| "large"`                      | `"medium"` | Controls the button's size (padding & font size). |
-| `buttonText` | `string`                                              | **(required)** | The text displayed on the button.              |
-| `icon`       | `ReactNode`                                           | `undefined`| Optional icon displayed next to text.             |
-
+| Prop         | Type                                     | Default        | Description                                       |
+| ------------ | ---------------------------------------- | -------------- | ------------------------------------------------- |
+| `variant`    | `"primary" \| "secondary" \| "tertiary"` | `"primary"`    | Defines the button style.                         |
+| `size`       | `"small" \| "medium" \| "large"`         | `"medium"`     | Controls the button's size (padding & font size). |
+| `buttonText` | `string`                                 | **(required)** | The text displayed on the button.                 |
+| `icon`       | `ReactNode`                              | `undefined`    | Optional icon displayed next to text.             |
 
 ### Icon Button Props
 

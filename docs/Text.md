@@ -8,17 +8,17 @@ The `Text` component provides flexible text rendering with customisable styles. 
 
 ### `TextProps`
 
-| Prop        | Type                             | Required | Description                                                              |
-| ----------- | -------------------------------- | -------- | ------------------------------------------------------------------------ |
-| `children`  | `React.ReactNode`                | ✅       | The content to display inside the text component.                         |
-| `as`        | `TextTag`                        | ❌       | Specifies the HTML tag to render (e.g., `h1`, `p`). Defaults to `p`.     |
-| `styleAs`   | `keyof typeof TextTag`           | ❌       | Defines the style variant to apply (overrides `as` prop if provided).    |
-| `colour`    | `Colours`                        | ❌       | The text colour (from custom `Colours` constant). Defaults to `Gray`.             |
-| `weight`    | `FontWeight`                     | ❌       | The font weight (from custom `FontWeight` constant).                                |
-| `size`      | `FontSize`                       | ❌       | The font size (from custom `FontSize` constant).                                    |
-| `font`      | `FontFamily`                     | ❌       | The font family (from custom `FontFamily` constant).                               |
-| `align`     | `"left" \| "centre" \| "right"`  | ❌       | Aligns the text (default is `left`).                                     |
-| `className` | `string`                         | ❌       | Additional custom class names to apply to the text element.              |
+| Prop        | Type                            | Required | Description                                                           |
+| ----------- | ------------------------------- | -------- | --------------------------------------------------------------------- |
+| `children`  | `React.ReactNode`               | ✅       | The content to display inside the text component.                     |
+| `as`        | `TextTag`                       | ❌       | Specifies the HTML tag to render (e.g., `h1`, `p`). Defaults to `p`.  |
+| `styleAs`   | `keyof typeof TextTag`          | ❌       | Defines the style variant to apply (overrides `as` prop if provided). |
+| `colour`    | `Colours`                       | ❌       | The text colour (from custom `Colours` constant). Defaults to `Gray`. |
+| `weight`    | `FontWeight`                    | ❌       | The font weight (from custom `FontWeight` constant).                  |
+| `size`      | `FontSize`                      | ❌       | The font size (from custom `FontSize` constant).                      |
+| `font`      | `FontFamily`                    | ❌       | The font family (from custom `FontFamily` constant).                  |
+| `align`     | `"left" \| "centre" \| "right"` | ❌       | Aligns the text (default is `left`).                                  |
+| `className` | `string`                        | ❌       | Additional custom class names to apply to the text element.           |
 
 ## Behaviour
 
@@ -35,4 +35,3 @@ The `Text` component provides flexible text rendering with customisable styles. 
 - The component uses `clsx` to conditionally apply CSS class names, allowing for additional styling flexibility.
 - The `Typography` object from constants is used to provide default styles based on the tag or style variant.
 - The `isValidTagForChildren` helper function ensures that the children are compatible with the selected tag (e.g., not rendering block elements within inline tags).
-

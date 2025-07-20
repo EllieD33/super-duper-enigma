@@ -8,8 +8,8 @@ The `MasonryGallery` component displays images in a grid with a repeating patter
 
 ### `MasonryGalleryProps`
 
-| Prop    | Type                     | Required | Description                                                              |
-|---------|--------------------------|---------|--------------------------------------------------------------------------|
+| Prop     | Type                 | Required | Description                                                                                                     |
+| -------- | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
 | `images` | `GalleryItemProps[]` | ✅       | An array of images to be displayed in the gallery. Each image must conform to the `GalleryItemProps` interface. |
 
 ### `GalleryItemProps`
