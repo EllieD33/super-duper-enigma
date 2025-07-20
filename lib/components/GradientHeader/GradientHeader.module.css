@@ -1,0 +1,42 @@
+.pinkToBlue {
+    background: linear-gradient(
+        107deg,
+        rgba(252, 11, 207, 1) 0%,
+        rgba(0, 189, 255, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+}
+
+.pink {
+    background: linear-gradient(
+        90deg,
+        rgba(252, 11, 207, 1) 0%,
+        rgba(99, 9, 83, 1) 79%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+}
+
+.blue {
+    background: #00bdff;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 189, 255, 1) 0%,
+        rgba(11, 81, 107, 1) 79%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+}
