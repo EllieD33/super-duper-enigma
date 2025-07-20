@@ -49,4 +49,9 @@
         opacity: 0.6;
         z-index: -1;
     }
+
+    .textContainer {
+        min-width: 300px;
+        min-height: 400px;
+    }
 }
